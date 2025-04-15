@@ -26,7 +26,7 @@ export const HeroSection = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/projects">
-              <Button variant="outline" className="border-primary bg-primary/10 hover:bg-primary/20 text-white px-8 py-6 text-lg rounded-3xl">
+              <Button variant="default" className="bg-primary hover:bg-primary/80 text-white px-8 py-6 text-lg rounded-3xl">
                 Explore Our Work
               </Button>
             </Link>
