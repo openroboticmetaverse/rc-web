@@ -35,7 +35,7 @@ export default function MeetupPage() {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
               <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                  Robotics <span className="text-primary">Meetup</span>
+                  Robotics Community <span className="text-primary">Meetup</span>
                 </h1>
                 <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
                   Connect with the robotic community in Aachen at our biannual event for innovation, collaboration, and inspiration.

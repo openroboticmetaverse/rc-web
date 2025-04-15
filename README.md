@@ -38,6 +38,11 @@ docker exec -it rc_website_v2 bash
 Once inside the container, run:
 
 ```sh
+yarn 
+```
+Then 
+
+```sh
 yarn dev
 ```
 
