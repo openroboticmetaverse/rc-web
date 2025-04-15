@@ -16,7 +16,7 @@ export const AboutSection = () => {
             <div className="aspect-square bg-card rounded-lg overflow-hidden">
               <div className="relative w-full h-full">
                 <Image 
-                  src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                  src="https://res.cloudinary.com/dilan3qfq/image/upload/f_auto,q_auto/openroboverse/group_foto_ne6ngk.jpg" 
                   alt="Robotics Collective"
                   fill
                   className="object-cover"
