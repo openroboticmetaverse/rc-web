@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Twitter, Github, Linkedin, MessageCircle } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-card  text-gray-300">
+    <footer className="bg-card text-gray-300">
       <div className="container mx-auto px-4 py-12">
-        <div className="flex items-center justify-between h-25">
+        <div className="flex items-start justify-between h-25">
+          {/* Logo and Description - Left */}
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center mb-4">
               <Image 
@@ -16,14 +18,32 @@ export function Footer() {
                 className="h-12 w-auto"
               />
             </Link>
-            <p className="text-sm">
+            <p className="text-sm max-w-xs">
               A community of robotics enthusiasts building the future together.
             </p>
           </div>
           
+          {/* Connect Section - Middle */}
+          <div className="text-center">
+            <div className="flex space-x-4 mt-2">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-full" aria-label="Twitter">
+                <Twitter className="h-6 w-6" />
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-full" aria-label="GitHub">
+                <Github className="h-6 w-6" />
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-full" aria-label="LinkedIn">
+                <Linkedin className="h-6 w-6" />
+              </a>
+              <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-full" aria-label="Discord">
+                <MessageCircle className="h-6 w-6" />
+              </a>
+            </div>
+          </div>
+          
+          {/* Navigation - Right */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Navigation</h3>
-            <ul className="space-y-2">
+            <ul className="space-y-2 mt-2">
               <li>
                 <Link href="/" className="hover:text-white transition-colors">
                   Home
@@ -48,32 +68,6 @@ export function Footer() {
                 <Link href="/contact" className="hover:text-white transition-colors">
                   Contact
                 </Link>
-              </li>
-            </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Connect</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  Twitter
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
-                  Discord
-                </a>
               </li>
             </ul>
           </div>
