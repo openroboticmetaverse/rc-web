@@ -1,14 +1,23 @@
-
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/components/ui/use-toast';
-import { Mail, MapPin, Send } from 'lucide-react';
+import { Mail, MapPin, Send, Bot, Wrench } from 'lucide-react';
+import { Alert, AlertDescription } from '@/components/ui/alert';
 
-export default function ContactPageContent() {
+type SearchParams = {
+  source?: string | string[];
+  action?: string | string[];
+};
+
+export default function ContactPageContent({ 
+  searchParams 
+}: { 
+  searchParams?: SearchParams
+}) {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
@@ -16,6 +25,20 @@ export default function ContactPageContent() {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showErrorPageMessage, setShowErrorPageMessage] = useState(false);
+
+  // Check if user came from error page
+  useEffect(() => {
+    if (searchParams?.source === '404' && searchParams?.action === 'join') {
+      setShowErrorPageMessage(true);
+      
+      // Optional: Pre-fill the message for users coming from the error page
+      setFormData(prev => ({
+        ...prev,
+        message: "I'd like to help improve the robotics collective website and projects."
+      }));
+    }
+  }, [searchParams]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -41,6 +64,7 @@ export default function ContactPageContent() {
         email: '',
         message: ''
       });
+      setShowErrorPageMessage(false);
     }, 1500);
   };
 
@@ -73,9 +97,30 @@ export default function ContactPageContent() {
                   <p className="text-gray-400">Jülicher Straße 72a</p>
                   <p className="text-gray-400">52070 Aachen, Germany</p>
                 </div>
+                
+                {/* Additional info card for those coming from 404 */}
+                {showErrorPageMessage && (
+                  <div className="bg-card p-6 rounded-lg border border-yellow-secondary/40">
+                    <Bot className="h-6 w-6 text-yellow-secondary mb-4" />
+                    <h3 className="text-lg font-medium mb-1">Join Our Development Team</h3>
+                    <p className="text-gray-400">We're always looking for talented individuals to hop onboard!</p>
+                  </div>
+                )}
               </div>
               
               <div className="md:col-span-2">
+                {/* Custom message for users from error page */}
+                {showErrorPageMessage && (
+                  <Alert className="mb-6 bg-yellow-secondary/10 border-yellow-secondary/30 text-gray-200">
+                    <div className="flex items-center gap-2">
+                      <Wrench className="h-5 w-5 text-yellow-secondary" />
+                      <AlertDescription className="text-sm">
+                        Great! We could use your help improving our software. Tell us a bit about yourself and your skills.
+                      </AlertDescription>
+                    </div>
+                  </Alert>
+                )}
+                
                 <div className="bg-card p-8 rounded-lg">
                   <h2 className="text-2xl font-semibold mb-6">Send us a message</h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
