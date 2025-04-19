@@ -4,9 +4,9 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
-const ContactSection = () => {
+const CTASection = () => {
   return (
-    <section id="contact" className="py-20 md:py-32 bg-secondary/30">
+    <section id="cta" className="py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -32,4 +32,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection;
+export default CTASection;

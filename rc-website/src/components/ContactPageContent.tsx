@@ -84,17 +84,25 @@ export default function ContactPageContent({
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
               <div className="md:col-span-1 space-y-8">
-                <div className="bg-card p-6 rounded-lg">
+                <a 
+                  href="mailto:info@roboticscollective.org" 
+                  className="block bg-card p-6 rounded-lg hover:bg-card/80 transition-colors"
+                >
                   <Mail className="h-6 w-6 text-primary mb-4" />
                   <h3 className="text-lg font-medium mb-1">Email Us</h3>
-                  <p className="text-gray-400">info@roboticscollective.io</p>
-                </div>
+                  <p className="text-gray-400">info@roboticscollective.org</p>
+                </a>
                 
-                <div className="bg-card p-6 rounded-lg">
+                <a 
+                  href="https://maps.google.com/maps?q=Jülicher+Str.+209q-s,+52070+Aachen,+Germany" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="block bg-card p-6 rounded-lg hover:bg-card/80 transition-colors"
+                >
                   <MapPin className="h-6 w-6 text-primary mb-4" />
                   <h3 className="text-lg font-medium mb-1">Location</h3>
-                  <p className="text-gray-400">TechHub Aachen</p>
-                  <p className="text-gray-400">Jülicher Straße 72a</p>
+                  <p className="text-gray-400">Robotics Collective e.V.</p>
+                  <p className="text-gray-400">Jülicher Str. 209q-s</p>
                   <p className="text-gray-400">52070 Aachen, Germany</p>
                 </div>
                 

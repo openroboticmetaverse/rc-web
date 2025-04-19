@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Github, Linkedin } from "lucide-react";
+import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "About Us - Robo Collective Nexus",
@@ -223,6 +224,9 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        {/* CTA Section */}
+        <CTASection />
       </div>
     </div>
   );
