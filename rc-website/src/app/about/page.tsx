@@ -3,9 +3,8 @@ import { Github, Linkedin } from "lucide-react";
 import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
-  title: "About Us - Robo Collective Nexus",
-  description:
-    "Learn about the Robo Collective Nexus team, mission, and values",
+  title: "About | Robotics Collective",
+  description: "Learn about the Robotics Collective team, mission, and vision",
   keywords: ["about us", "robotics team", "mission", "values", "history"],
 };
 

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy - Robo Collective Nexus",
+  title: "Privacy Policy | Robotics Collective",
   description:
-    "Privacy policy and data protection information for Robo Collective Nexus",
+    "Privacy policy and data protection information for Robotics Collective",
   keywords: [
     "privacy policy",
     "data protection",

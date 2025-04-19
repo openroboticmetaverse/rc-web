@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Imprint - Robo Collective Nexus",
-  description: "Legal notice and imprint information for Robo Collective Nexus",
+  title: "Imprint | Robotics Collective",
+  description: "Legal notice and imprint information for Robotics Collective",
   keywords: ["imprint", "legal notice", "contact information", "disclaimer"],
 };
 
