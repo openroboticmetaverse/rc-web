@@ -1,76 +1,200 @@
 "use client";
 
+import React from "react";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from '@/components/ui/accordion';
+} from "@/components/ui/accordion";
 
-export const FAQSection = () => {
+/**
+ * A single FAQ entry. The `answer` field accepts any React node so that
+ * rich‑text coming from a CMS (e.g. Markdown, PortableText) can be dropped in
+ * without additional parsing logic.
+ */
+export interface FAQItem {
+  /** A unique and stable value – ideally the CMS slug */
+  id: string;
+  question: string;
+  answer: React.ReactNode;
+}
+
+type AccordionSingleProps = Omit<
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>,
+  "type" | "value"
+> & {
+  type: "single";
+  collapsible?: boolean;
+  value?: string;
+  defaultValue?: string;
+  onValueChange?: (value: string) => void;
+};
+
+type AccordionMultipleProps = Omit<
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Root>,
+  "type" | "value"
+> & {
+  type: "multiple";
+  value?: string[];
+  defaultValue?: string[];
+  onValueChange?: (value: string[]) => void;
+};
+
+type AccordionProps = AccordionSingleProps | AccordionMultipleProps;
+
+export interface FAQSectionProps {
+  /**
+   * Section heading. If you want to keep the primary‑color highlight, include
+   * the word you want highlighted in `highlightWord` instead.
+   */
+  title?: string;
+  /** The word inside the title that should receive the primary‑color class. */
+  highlightWord?: string;
+  /**
+   * Array of FAQ items. In most cases this will come straight from your CMS
+   * as JSON. If omitted, `defaultItems` are rendered.
+   */
+  items?: FAQItem[];
+  /**
+   * Forwarded props for the underlying Accordion. Useful if you want to switch
+   * to `multiple` mode or adjust other shadcn/ui accordion options from the
+   * page level.
+   */
+  accordionProps?: Omit<AccordionProps, "type" | "collapsible" | "className">;
+  /**
+   * Whether the accordion items can be collapsed after expanding.
+   * Only applies when type is "single".
+   */
+  collapsible?: boolean;
+  /**
+   * The type of accordion behavior: "single" allows only one item open at a time,
+   * "multiple" allows multiple items to be open simultaneously.
+   */
+  type?: "single" | "multiple";
+}
+
+/**
+ * Fallback data so the component renders out‑of‑the‑box before the CMS is
+ * connected. Feel free to delete once you have real data.
+ */
+const defaultItems: FAQItem[] = [
+  {
+    id: "what-is-rc",
+    question: "What is Robotics Collective e.V.?",
+    answer: (
+      <>
+        Robotics Collective e.V. is a non‑profit organisation that unites
+        individuals, researchers, and industry partners to accelerate
+        intelligent robotics and embodied AI.
+      </>
+    ),
+  },
+  {
+    id: "how-to-join",
+    question: "How can I join the collective?",
+    answer:
+      "Fill out the membership form or schedule a call with us if you are a company/research institute",
+  },
+  {
+    id: "need-experience",
+    question: "Do I need technical experience to join?",
+    answer:
+      "Not at all. We welcome everyone from curious beginners to seasoned roboticists – learning together is core to our mission.",
+  },
+  {
+    id: "project-types",
+    question: "What types of projects do you incubate?",
+    answer:
+      "From autonomous mobile robots and ML perception pipelines to open‑source tooling and human‑robot‑interaction studies – if it advances embodied AI, it belongs here!",
+  },
+  {
+    id: "events",
+    question: "How often do you host events & workshops?",
+    answer:
+      "We run community sessions every month plus ad‑hoc hackathons and deep‑dive workshops. Subscribe to the newsletter for dates.",
+  },
+  {
+    id: "orm-status",
+    question: "What happened to open robotic metaverse?",
+    answer:
+      "open robotic metaverse has transitioned from an independent association into a dedicated project inside Robotics Collective, continuing to develop the vision of browser‑based simulation.",
+  },
+];
+
+const highlightSentence = (
+  title: string,
+  highlightWord: string | undefined
+): React.ReactNode => {
+  if (!highlightWord || !title.includes(highlightWord)) return title;
+  const parts = title.split(new RegExp(`(${highlightWord})`, "gi"));
+  return parts.map((part, idx) =>
+    part.toLowerCase() === highlightWord.toLowerCase() ? (
+      <span key={idx} className="text-primary">
+        {part}
+      </span>
+    ) : (
+      part
+    )
+  );
+};
+
+export const FAQSection: React.FC<FAQSectionProps> = ({
+  title = "Frequently Asked Questions",
+  highlightWord = "Asked",
+  items = defaultItems,
+  accordionProps,
+  collapsible = true,
+  type = "single",
+}) => {
+  // Separate accordionProps into common props and type-specific props
+  const { value, defaultValue, onValueChange, ...restAccordionProps } =
+    accordionProps || {};
+
+  // Create properly typed accordion props based on the type
+  const accordionConfig =
+    type === "single"
+      ? {
+          type: "single" as const,
+          collapsible,
+          value: typeof value === "string" ? value : undefined,
+          defaultValue:
+            typeof defaultValue === "string" ? defaultValue : undefined,
+          onValueChange: onValueChange as ((value: string) => void) | undefined,
+        }
+      : {
+          type: "multiple" as const,
+          value: Array.isArray(value) ? value : undefined,
+          defaultValue: Array.isArray(defaultValue) ? defaultValue : undefined,
+          onValueChange: onValueChange as
+            | ((value: string[]) => void)
+            | undefined,
+        };
+
   return (
     <section id="faq" className="py-20 md:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-          Frequently <span className="text-primary">Asked</span> Questions
+          {highlightSentence(title, highlightWord)}
         </h2>
-        
+
         <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1">
-              <AccordionTrigger className="text-lg font-medium">
-                What is Robotics Collective?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-300">
-                Robotics Collective is a community of engineers, designers, researchers, and enthusiasts 
-                passionate about advancing the field of robotics and AI. We collaborate on projects, 
-                share knowledge, and work together to solve challenging problems in the field.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-2">
-              <AccordionTrigger className="text-lg font-medium">
-                How can I join the collective?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-300">
-                You can join our collective by reaching out through our contact form or attending 
-                one of our regular meetups. We welcome members from all backgrounds with an interest 
-                in robotics, AI, engineering, or design.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-3">
-              <AccordionTrigger className="text-lg font-medium">
-                Do I need technical experience to join?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-300">
-                Not at all! While many of our members have technical backgrounds, we welcome enthusiasts 
-                of all skill levels. Our community is built on learning and sharing knowledge, so it's a 
-                great place to develop your skills regardless of your starting point.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-4">
-              <AccordionTrigger className="text-lg font-medium">
-                What types of projects does the collective work on?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-300">
-                Our projects span a wide range of applications including autonomous systems, 
-                machine learning implementations, robot design and construction, and human-robot 
-                interaction research. Check out our Projects section for examples of our work.
-              </AccordionContent>
-            </AccordionItem>
-            
-            <AccordionItem value="item-5">
-              <AccordionTrigger className="text-lg font-medium">
-                How often do you host events and meetups?
-              </AccordionTrigger>
-              <AccordionContent className="text-gray-300">
-                We typically host monthly meetups and workshops, with special events throughout the year. 
-                Our calendar varies based on project demands and community interests. Subscribe to our 
-                newsletter to stay informed about upcoming events.
-              </AccordionContent>
-            </AccordionItem>
+          <Accordion
+            className="w-full"
+            {...accordionConfig}
+            {...restAccordionProps}
+          >
+            {items.map(({ id, question, answer }) => (
+              <AccordionItem key={id} value={id}>
+                <AccordionTrigger className="text-lg font-medium">
+                  {question}
+                </AccordionTrigger>
+                <AccordionContent className="text-gray-300">
+                  {typeof answer === "string" ? <p>{answer}</p> : answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
           </Accordion>
         </div>
       </div>
