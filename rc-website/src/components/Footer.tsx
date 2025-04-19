@@ -5,9 +5,9 @@ import { Twitter, Github, Linkedin, MessageCircle } from "lucide-react";
 export function Footer() {
   return (
     <footer className="bg-card text-gray-300">
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex items-start justify-between h-25">
-          {/* Logo and Description - Left */}
+          {/* Logo - Left */}
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center mb-4">
               <Image 
@@ -18,31 +18,10 @@ export function Footer() {
                 className="h-12 w-auto"
               />
             </Link>
-            <p className="text-sm max-w-xs">
-              A community of robotics enthusiasts building the future together.
-            </p>
-          </div>
-          
-          {/* Connect Section - Middle */}
-          <div className="text-center">
-            <div className="flex space-x-4 mt-2">
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-full" aria-label="Twitter">
-                <Twitter className="h-6 w-6" />
-              </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-full" aria-label="GitHub">
-                <Github className="h-6 w-6" />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-full" aria-label="LinkedIn">
-                <Linkedin className="h-6 w-6" />
-              </a>
-              <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-2 hover:bg-gray-800 rounded-full" aria-label="Discord">
-                <MessageCircle className="h-6 w-6" />
-              </a>
-            </div>
           </div>
           
           {/* Navigation - Right */}
-          <div>
+          <div className="text-right">
             <ul className="space-y-2 mt-2">
               <li>
                 <Link href="/" className="hover:text-white transition-colors">
@@ -74,15 +53,32 @@ export function Footer() {
         </div>
         
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm">
+          {/* Social Media Icons - Bottom Left */}
+          <div className="flex space-x-3 mb-4 md:mb-0">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-1.5 hover:bg-gray-800 rounded-full" aria-label="Twitter">
+              <Twitter className="h-5 w-5" />
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-1.5 hover:bg-gray-800 rounded-full" aria-label="GitHub">
+              <Github className="h-5 w-5" />
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-1.5 hover:bg-gray-800 rounded-full" aria-label="LinkedIn">
+              <Linkedin className="h-5 w-5" />
+            </a>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors p-1.5 hover:bg-gray-800 rounded-full" aria-label="Discord">
+              <MessageCircle className="h-5 w-5" />
+            </a>
+          </div>
+          
+          <p className="text-sm text-center md:text-left">
             © {new Date().getFullYear()} Robotics Collective e.V. | All rights reserved.
           </p>
+          
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link href="/privacy" className="text-sm hover:text-white transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-sm hover:text-white transition-colors">
-              Terms of Service
+            <Link href="/imprint" className="text-sm hover:text-white transition-colors">
+              Imprint
             </Link>
           </div>
         </div>

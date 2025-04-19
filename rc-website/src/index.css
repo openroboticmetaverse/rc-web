@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -7,7 +6,7 @@
 
 @layer base {
   :root {
-    --background: 252 38% 8%;
+    --background: 0 0% 0%; /* Changed to #000000 (pure black) */
     --foreground: 210 40% 98%;
 
     --card: 252 38% 12%;
@@ -16,7 +15,7 @@
     --popover: 252 38% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 194 45% 51%;
+    --primary: 187 47% 47%; /* Changed to #47A8BD */
     --primary-foreground: 210 40% 98%;
 
     --secondary: 252 38% 14%;
@@ -33,7 +32,7 @@
 
     --border: 252 38% 14%;
     --input: 252 38% 14%;
-    --ring: 194 45% 51%;
+    --ring: 187 47% 47%; /* Changed to match primary */
 
     --radius: 0.5rem;
   }

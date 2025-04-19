@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "About Us - Robo Collective Nexus",
@@ -37,7 +38,6 @@ export default function AboutPage()  {
   return (
     <div className="min-h-screen bg-background">
     
-      
       <div className="">
         {/* Mission Section */}
         <section className="py-16 md:py-24">
@@ -100,6 +100,9 @@ export default function AboutPage()  {
             </div>
           </div>
         </section>
+        
+        {/* CTA Section */}
+        <CTASection />
       </div>
       
     </div>

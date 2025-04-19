@@ -1,6 +1,7 @@
 import { Calendar, MapPin, Users } from "lucide-react";
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
+import CTASection from "@/components/CTASection";
 
 export const metadata: Metadata = {
   title: "Meetups - Robo Collective Nexus",
@@ -47,11 +48,18 @@ export default function MeetupPage() {
                     <h3 className="text-lg font-semibold mb-1">Next Event</h3>
                     <p className="text-gray-300">October 15-16, 2025</p>
                   </div>
-                  <div className="bg-card p-6 rounded-lg flex items-center justify-center flex-col">
+                  <a 
+                    href="https://maps.google.com/maps?q=Jülicher+Str.+209q-s,+52070+Aachen,+Germany" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bg-card p-6 rounded-lg flex items-center justify-center flex-col hover:bg-card/80 transition-colors"
+                  >
                     <MapPin className="text-primary h-8 w-8 mb-3" />
                     <h3 className="text-lg font-semibold mb-1">Location</h3>
-                    <p className="text-gray-300">TechHub Aachen</p>
-                  </div>
+                    <p className="text-gray-300">Robotics Collective e.V.</p>
+                    <p className="text-gray-300">Jülicher Str. 209q-s</p>
+                    <p className="text-gray-300">52070 Aachen, Germany</p>
+                  </a>
                   <div className="bg-card p-6 rounded-lg flex items-center justify-center flex-col">
                     <Users className="text-primary h-8 w-8 mb-3" />
                     <h3 className="text-lg font-semibold mb-1">Participants</h3>
@@ -123,6 +131,9 @@ export default function MeetupPage() {
               </div>
             </div>
           </section>
+          
+          {/* CTA Section */}
+          <CTASection />
         </div>
         
       </div>
