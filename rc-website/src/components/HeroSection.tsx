@@ -113,9 +113,11 @@ export const HeroSection = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 z-30">
         <div className="text-center max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            <span className="block glow">The future of Embodied AI</span>
-            <span className="block text-primary">One Project at a Time</span>
+          <h1 className="text-xl md:text-6xl lg:text-7xl font-bold mb-6">
+            <span className="block glow">
+              together, we shape the future of{" "}
+              <span className="text-primary">robotics</span>
+            </span>
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
