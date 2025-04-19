@@ -1,7 +1,5 @@
-
 import { Metadata } from 'next';
 import ContactPageContent from '@/components/ContactPageContent';
-
 
 //TODO change image and tags etc..
 export const metadata: Metadata = {
@@ -23,10 +21,14 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ContactPage() {
+export default function ContactPage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined };
+}) {
   return (
     <>
-      <ContactPageContent />
+      <ContactPageContent searchParams={searchParams} />
     </>
   );
 }
