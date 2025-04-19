@@ -1,57 +1,60 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { useToast } from '@/components/ui/use-toast';
-import { Mail, MapPin, Send, Bot, Wrench } from 'lucide-react';
-import { Alert, AlertDescription } from '@/components/ui/alert';
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/components/ui/use-toast";
+import { Mail, MapPin, Send, Bot, Wrench } from "lucide-react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 type SearchParams = {
   source?: string | string[];
   action?: string | string[];
 };
 
-export default function ContactPageContent({ 
-  searchParams 
-}: { 
-  searchParams?: SearchParams
+export default function ContactPageContent({
+  searchParams,
+}: {
+  searchParams?: SearchParams;
 }) {
   const { toast } = useToast();
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showErrorPageMessage, setShowErrorPageMessage] = useState(false);
 
   // Check if user came from error page
   useEffect(() => {
-    if (searchParams?.source === '404' && searchParams?.action === 'join') {
+    if (searchParams?.source === "404" && searchParams?.action === "join") {
       setShowErrorPageMessage(true);
-      
+
       // Optional: Pre-fill the message for users coming from the error page
-      setFormData(prev => ({
+      setFormData((prev) => ({
         ...prev,
-        message: "I'd like to help improve the robotics collective website and projects."
+        message:
+          "I'd like to help improve the robotics collective website and projects.",
       }));
     }
   }, [searchParams]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
@@ -60,9 +63,9 @@ export default function ContactPageContent({
         description: "We'll get back to you as soon as possible.",
       });
       setFormData({
-        name: '',
-        email: '',
-        message: ''
+        name: "",
+        email: "",
+        message: "",
       });
       setShowErrorPageMessage(false);
     }, 1500);
@@ -78,25 +81,26 @@ export default function ContactPageContent({
                 Get in <span className="text-primary">Touch</span>
               </h1>
               <p className="text-lg text-gray-300">
-                Interested in joining the collective or learning more about our work? We'd love to hear from you.
+                Interested in joining the collective or learning more about our
+                work? We'd love to hear from you.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-5xl mx-auto">
               <div className="md:col-span-1 space-y-8">
-                <a 
-                  href="mailto:info@roboticscollective.org" 
+                <a
+                  href="mailto:info@roboticscollective.org"
                   className="block bg-card p-6 rounded-lg hover:bg-card/80 transition-colors"
                 >
                   <Mail className="h-6 w-6 text-primary mb-4" />
                   <h3 className="text-lg font-medium mb-1">Email Us</h3>
                   <p className="text-gray-400">info@roboticscollective.org</p>
                 </a>
-                
-                <a 
-                  href="https://maps.google.com/maps?q=Jülicher+Str.+209q-s,+52070+Aachen,+Germany" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+
+                <a
+                  href="https://maps.google.com/maps?q=Jülicher+Str.+209q-s,+52070+Aachen,+Germany"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block bg-card p-6 rounded-lg hover:bg-card/80 transition-colors"
                 >
                   <MapPin className="h-6 w-6 text-primary mb-4" />
@@ -104,18 +108,23 @@ export default function ContactPageContent({
                   <p className="text-gray-400">Robotics Collective e.V.</p>
                   <p className="text-gray-400">Jülicher Str. 209q-s</p>
                   <p className="text-gray-400">52070 Aachen, Germany</p>
-                </div>
-                
+                </a>
+
                 {/* Additional info card for those coming from 404 */}
                 {showErrorPageMessage && (
                   <div className="bg-card p-6 rounded-lg border border-yellow-secondary/40">
                     <Bot className="h-6 w-6 text-yellow-secondary mb-4" />
-                    <h3 className="text-lg font-medium mb-1">Join Our Development Team</h3>
-                    <p className="text-gray-400">We're always looking for talented individuals to hop onboard!</p>
+                    <h3 className="text-lg font-medium mb-1">
+                      Join Our Development Team
+                    </h3>
+                    <p className="text-gray-400">
+                      We're always looking for talented individuals to hop
+                      onboard!
+                    </p>
                   </div>
                 )}
               </div>
-              
+
               <div className="md:col-span-2">
                 {/* Custom message for users from error page */}
                 {showErrorPageMessage && (
@@ -123,18 +132,23 @@ export default function ContactPageContent({
                     <div className="flex items-center gap-2">
                       <Wrench className="h-5 w-5 text-yellow-secondary" />
                       <AlertDescription className="text-sm">
-                        Great! We could use your help improving our software. Tell us a bit about yourself and your skills.
+                        Great! We could use your help improving our software.
+                        Tell us a bit about yourself and your skills.
                       </AlertDescription>
                     </div>
                   </Alert>
                 )}
-                
+
                 <div className="bg-card p-8 rounded-lg">
-                  <h2 className="text-2xl font-semibold mb-6">Send us a message</h2>
+                  <h2 className="text-2xl font-semibold mb-6">
+                    Send us a message
+                  </h2>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <label htmlFor="name" className="text-sm font-medium">Name</label>
+                        <label htmlFor="name" className="text-sm font-medium">
+                          Name
+                        </label>
                         <Input
                           id="name"
                           name="name"
@@ -146,7 +160,9 @@ export default function ContactPageContent({
                         />
                       </div>
                       <div className="space-y-2">
-                        <label htmlFor="email" className="text-sm font-medium">Email</label>
+                        <label htmlFor="email" className="text-sm font-medium">
+                          Email
+                        </label>
                         <Input
                           id="email"
                           name="email"
@@ -159,9 +175,11 @@ export default function ContactPageContent({
                         />
                       </div>
                     </div>
-                    
+
                     <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm font-medium">Message</label>
+                      <label htmlFor="message" className="text-sm font-medium">
+                        Message
+                      </label>
                       <Textarea
                         id="message"
                         name="message"
@@ -173,9 +191,9 @@ export default function ContactPageContent({
                         className="bg-card border-primary/20 focus:border-primary resize-none"
                       />
                     </div>
-                    
-                    <Button 
-                      type="submit" 
+
+                    <Button
+                      type="submit"
                       className="bg-[#E6AF2E] hover:bg-[#E6AF2E]/90 text-black font-medium w-full sm:w-auto"
                       disabled={isSubmitting}
                     >
