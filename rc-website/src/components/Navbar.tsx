@@ -1,13 +1,15 @@
-"use client"
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { MenuIcon, X } from 'lucide-react';
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { MenuIcon, X } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,9 +20,9 @@ export function Navbar() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -28,48 +30,96 @@ export function Navbar() {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const isActivePath = (path: string) => {
+    if (path === "/" && pathname === "/") return true;
+    if (path !== "/" && pathname.startsWith(path)) return true;
+    return false;
+  };
+
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-background/90 backdrop-blur-md shadow-md' : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-background/90 backdrop-blur-md shadow-md"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
-              <Image 
-                src="/logo.svg" 
-                alt="Robotics Collective Logo" 
+              <Image
+                src="/logo.svg"
+                alt="Robotics Collective Logo"
                 width={40}
                 height={40}
                 className="h-10 w-auto"
               />
             </Link>
           </div>
-          
+
           <div className="hidden md:flex space-x-8">
-            <Link href="/" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="/"
+              className={`transition-colors ${
+                isActivePath("/")
+                  ? "text-white font-medium glow"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
               Home
             </Link>
-            <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="/about"
+              className={`transition-colors ${
+                isActivePath("/about")
+                  ? "text-white font-medium glow"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
               About Us
             </Link>
-            <Link href="/projects" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="/projects"
+              className={`transition-colors ${
+                isActivePath("/projects")
+                  ? "text-white font-medium glow"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
               Projects
             </Link>
-            <Link href="/meetup" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="/meetup"
+              className={`transition-colors ${
+                isActivePath("/meetup")
+                  ? "text-white font-medium glow"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
               Meetup
             </Link>
-            <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+            <Link
+              href="/contact"
+              className={`transition-colors ${
+                isActivePath("/contact")
+                  ? "text-white font-medium glow"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
               Contact
             </Link>
           </div>
-          
+
           <div className="hidden md:block">
-            <Button variant="outline" className="border-yellow-secondary bg-yellow-secondary/10 hover:bg-yellow-secondary/20 text-yellow-secondary font-lg rounded-3xl">
+            <Button
+              variant="outline"
+              className="border-yellow-secondary bg-yellow-secondary/10 hover:bg-yellow-secondary/20 text-yellow-secondary font-lg rounded-3xl"
+            >
               Join Us
             </Button>
           </div>
-          
+
           <div className="md:hidden">
             <button
               type="button"
@@ -81,47 +131,67 @@ export function Navbar() {
           </div>
         </div>
       </div>
-      
+
       {mobileMenuOpen && (
         <div className="md:hidden bg-card/95 backdrop-blur-md">
           <div className="container mx-auto px-4 pt-2 pb-4 space-y-4">
-            <Link 
-              href="/" 
-              className="block text-gray-300 hover:text-white transition-colors py-2"
+            <Link
+              href="/"
+              className={`block py-2 transition-colors ${
+                isActivePath("/")
+                  ? "text-white font-medium glow"
+                  : "text-gray-300 hover:text-white"
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               Home
             </Link>
-            <Link 
-              href="/about" 
-              className="block text-gray-300 hover:text-white transition-colors py-2"
+            <Link
+              href="/about"
+              className={`block py-2 transition-colors ${
+                isActivePath("/about")
+                  ? "text-white font-medium glow"
+                  : "text-gray-300 hover:text-white"
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               About Us
             </Link>
-            <Link 
-              href="/projects" 
-              className="block text-gray-300 hover:text-white transition-colors py-2"
+            <Link
+              href="/projects"
+              className={`block py-2 transition-colors ${
+                isActivePath("/projects")
+                  ? "text-white font-medium glow"
+                  : "text-gray-300 hover:text-white"
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               Projects
             </Link>
-            <Link 
-              href="/meetup" 
-              className="block text-gray-300 hover:text-white transition-colors py-2"
+            <Link
+              href="/meetup"
+              className={`block py-2 transition-colors ${
+                isActivePath("/meetup")
+                  ? "text-white font-medium glow"
+                  : "text-gray-300 hover:text-white"
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               Meetup
             </Link>
-            <Link 
-              href="/contact" 
-              className="block text-gray-300 hover:text-white transition-colors py-2"
+            <Link
+              href="/contact"
+              className={`block py-2 transition-colors ${
+                isActivePath("/contact")
+                  ? "text-white font-medium glow"
+                  : "text-gray-300 hover:text-white"
+              }`}
               onClick={() => setMobileMenuOpen(false)}
             >
               Contact
             </Link>
-            <Button 
-              variant="default" 
+            <Button
+              variant="default"
               className="w-full bg-yellow-secondary hover:bg-yellow-secondary/90 text-black font-medium mt-4"
               onClick={() => setMobileMenuOpen(false)}
             >
