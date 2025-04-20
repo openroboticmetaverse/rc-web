@@ -1,34 +1,49 @@
-import { Metadata } from 'next';
-import ContactPageContent from '@/components/ContactPageContent';
+import { Metadata } from "next";
+import ContactPageContent from "@/components/ContactPageContent";
+import { Suspense } from "react";
 
 //TODO change image and tags etc..
 export const metadata: Metadata = {
-  title: 'Contact Us | Robotics Collective',
-  description: 'Get in touch with the Robotics Collective team. We\'d love to hear from you about collaborations, questions, or just to say hello.',
-  keywords: ['contact', 'robotics', 'collective', 'get in touch', 'feedback', 'collaboration'],
+  title: "Contact| Robotics Collective",
+  description:
+    "Get in touch with the Robotics Collective team. We'd love to hear from you about collaborations, questions, or just to say hello.",
+  keywords: [
+    "contact",
+    "robotics",
+    "collective",
+    "get in touch",
+    "feedback",
+    "collaboration",
+  ],
+  metadataBase: new URL("https://roboticscollective.org"),
   openGraph: {
-    title: 'Contact Us | Robotics Collective',
-    description: 'Get in touch with the Robotics Collective team. We\'d love to hear from you about collaborations, questions, or just to say hello.',
-    url: 'https://roboticscollective.org/contact',
+    title: "Contact | Robotics Collective",
+    description:
+      "Get in touch with the Robotics Collective team. We'd love to hear from you about collaborations, questions, or just to say hello.",
+    url: "https://roboticscollective.org/contact",
     images: [
       {
-        url: '/og-contact.jpg',
+        url: "/og-contact.jpg",
         width: 1200,
         height: 630,
-        alt: 'Contact Robotics Collective',
+        alt: "Contact Robotics Collective",
       },
     ],
   },
 };
 
-export default function ContactPage({
-  searchParams,
-}: {
-  searchParams: { [key: string]: string | string[] | undefined };
-}) {
+export default function ContactPage() {
   return (
     <>
-      <ContactPageContent searchParams={searchParams} />
+      <Suspense
+        fallback={
+          <div className="min-h-screen bg-background pt-24 flex items-center justify-center">
+            Loading...
+          </div>
+        }
+      >
+        <ContactPageContent />
+      </Suspense>
     </>
   );
 }

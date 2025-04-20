@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   description: "A community of robotics enthusiasts and professionals",
   keywords: ["robotics", "community", "tech", "projects", "meetups"],
   authors: [{ name: "Robo Collective Nexus Team" }],
+  metadataBase: new URL("https://roboticscollective.org"),
   openGraph: {
     title: "Robo Collective Nexus",
     description: "A community of robotics enthusiasts and professionals",
