@@ -47,13 +47,22 @@ export function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center gap-2">
               <Image
                 src="/logo.svg"
                 alt="Robotics Collective Logo"
                 width={40}
                 height={40}
                 className="h-10 w-auto"
+              />
+              <Image
+                src="/logotext.svg"
+                alt="Robotics Collective"
+                width={150}
+                height={30}
+                className={`h-8 w-auto transition-opacity duration-600ms ${
+                  isScrolled ? "opacity-0 max-w-[150-px]" : "opacity-100 max-w-[150px]"
+                }`}
               />
             </Link>
           </div>
@@ -112,12 +121,14 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:block">
-            <Button
-              variant="outline"
-              className="border-yellow-secondary bg-yellow-secondary/10 hover:bg-yellow-secondary/20 text-yellow-secondary font-lg rounded-3xl"
-            >
-              Join Us
-            </Button>
+            <Link href="/contact">
+              <Button
+                 variant="outline"
+                 className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/20 px-8 py-2 rounded-3xl w-full"
+              >
+                Join Us
+              </Button>
+            </Link>
           </div>
 
           <div className="md:hidden">
@@ -155,7 +166,7 @@ export function Navbar() {
               }`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              About Us
+              About
             </Link>
             <Link
               href="/projects"
@@ -191,12 +202,13 @@ export function Navbar() {
               Contact
             </Link>
             <Button
-              variant="default"
-              className="w-full bg-yellow-secondary hover:bg-yellow-secondary/90 text-black font-medium mt-4"
+              variant="outline"
+              className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/20 px-8 py-6 rounded-3xl w-full"
               onClick={() => setMobileMenuOpen(false)}
             >
               Join Us
             </Button>
+            
           </div>
         </div>
       )}

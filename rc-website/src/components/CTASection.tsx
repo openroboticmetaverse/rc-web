@@ -43,7 +43,7 @@ const CTASection = () => {
             </Link>
             <Link href="/donate">
               <Button 
-                variant="outline"
+                variant="default"
                 className="bg-[#C03221] text-white hover:bg-[#C03221]/80 px-8 py-6 text-lg rounded-3xl"
                 size="lg"
               >

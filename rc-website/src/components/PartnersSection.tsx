@@ -15,26 +15,17 @@ const partners = [
 
 export default function PartnersSection() {
   const [api, setApi] = useState<CarouselApi>();
-  const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!api) return;
     
-    // Listen for slide changes to update the current index
-    const onSelect = () => {
-      setCurrentIndex(api.selectedScrollSnap());
-    };
-    
-    api.on('select', onSelect);
-    
     // Set up automatic sliding with a smoother, slower interval
     const autoplayInterval = setInterval(() => {
       api.scrollNext(); // Smooth scroll
-    }, 4000); // Slide every 4 seconds
+    }, 5000); // Slide every 4 seconds
     
     return () => {
-      api.off('select', onSelect);
       clearInterval(autoplayInterval);
     };
   }, [api]);
@@ -46,18 +37,14 @@ export default function PartnersSection() {
           Our <span className="text-primary glow">Partners</span>
         </h2>
         
-        <div className="partners-spotlight-container relative mx-auto max-w-5xl" ref={containerRef}>
-          {/* Spotlight effect overlay */}
-          <div className="partners-spotlight absolute inset-0 z-10 pointer-events-none"></div>
-          
+        <div className="mx-auto max-w-5xl" ref={containerRef}>
           <Carousel 
             opts={{
               align: "center",
               loop: true,
               dragFree: true,
               containScroll: false,
-              duration: 1500, // Longer animation duration for smoother sliding
-              watchDrag: false // Disable drag watching for smoother animation
+              duration: 1200, // Longer animation duration for smoother sliding
             }}
             setApi={setApi}
             className="w-full overflow-hidden"
@@ -70,15 +57,9 @@ export default function PartnersSection() {
                   className="pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/6"
                 >
                   <div 
-                    className={`
-                      partner-logo flex flex-col items-center justify-center p-6 
+                    className="partner-logo flex flex-col items-center justify-center p-6 
                       bg-card/50 backdrop-blur-sm rounded-lg border border-border/30 h-32 
-                      transition-all duration-500 
-                      ${index % partners.length === currentIndex % partners.length ? 'animate-float' : ''}
-                    `}
-                    style={{
-                      opacity: getOpacity(index % partners.length, currentIndex % partners.length, partners.length)
-                    }}
+                      transition-all duration-500"
                   >
                     {/* Replace with actual logo images when available */}
                     <div className="h-16 w-full flex items-center justify-center">
@@ -95,19 +76,4 @@ export default function PartnersSection() {
       </div>
     </section>
   );
-}
-
-// Helper function to calculate opacity based on position
-function getOpacity(itemIndex: number, currentIndex: number, totalItems: number): number {
-  // Calculate the shortest distance between items in a circular array
-  const distance = Math.min(
-    Math.abs(itemIndex - currentIndex),
-    totalItems - Math.abs(itemIndex - currentIndex)
-  );
-  
-  // Center items are fully visible, items further away fade out
-  if (distance === 0) return 1;
-  if (distance === 1) return 0.7;
-  if (distance === 2) return 0.4;
-  return 0.1;
 }
