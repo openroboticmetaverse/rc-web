@@ -72,8 +72,12 @@ export default function MeetupPage() {
                 </div>
               </div>
 
-              <Button className="mt-12 bg-yellow-secondary hover:bg-yellow-secondary/90 text-black font-medium px-8 py-6 text-lg">
-                Register for the Event
+             
+              <Button 
+                variant="outline"
+                className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/20 px-8 py-6 text-lg rounded-3xl"
+              >
+                Register for the event
               </Button>
             </div>
           </div>

@@ -17,6 +17,13 @@ export function Footer() {
                 height={48} 
                 className="h-12 w-auto"
               />
+              <Image 
+                src="/logotext.svg" 
+                alt="Robotics Collective Text Logo" 
+                width={150} 
+                height={48} 
+                className="h-12 w-auto ml-2"
+              />
             </Link>
           </div>
           
@@ -30,7 +37,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/about" className="hover:text-white transition-colors">
-                  About Us
+                  About
                 </Link>
               </li>
               <li>

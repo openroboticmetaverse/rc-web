@@ -8,22 +8,22 @@ import { Footer } from "@/components/Footer";
 import { Providers } from "./providers";
 import { TooltipProvider } from "./tooltip-provider";
 
-const spaceGrotesk = Space_Grotesk({ 
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
 });
 
 export const metadata: Metadata = {
-  title: "Robo Collective Nexus",
+  title: "Robotics Collective",
   description: "A community of robotics enthusiasts and professionals",
   keywords: ["robotics", "community", "tech", "projects", "meetups"],
-  authors: [{ name: "Robo Collective Nexus Team" }],
+  authors: [{ name: "Robotics Collective Team" }],
   metadataBase: new URL("https://roboticscollective.org"),
   openGraph: {
-    title: "Robo Collective Nexus",
+    title: "Robotics Collective",
     description: "A community of robotics enthusiasts and professionals",
-    url: "https://robocollectivenexus.org",
-    siteName: "Robo Collective Nexus",
+    url: "https://roboticscollective.org",
+    siteName: "Robotics Collective",
     locale: "en_US",
     type: "website",
   },
