@@ -34,9 +34,10 @@ export default function PrivacyPage() {
                 The entity responsible for data processing on this website is:
               </p>
               <p className="bg-card/50 p-4 rounded-lg">
-                Robotics Collective e.V.
+                {/* <strong>Robotics Collective e.V.</strong> */}
+                open robotic metaverse e.V.
                 <br />
-                Jülicher Str. 209q-s
+                Jülicher Str. 209d
                 <br />
                 52070 Aachen
                 <br />

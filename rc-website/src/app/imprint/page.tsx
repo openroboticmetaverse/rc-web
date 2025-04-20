@@ -20,7 +20,8 @@ export default function ImprintPage() {
               <h2>Information in Accordance with Section §5 TMG</h2>
               <div className="bg-card/50 p-6 rounded-lg mb-8">
                 <p className="mb-0">
-                  <strong>Robotics Collective e.V.</strong>
+                  {/* <strong>Robotics Collective e.V.</strong> */}
+                  open robotic metaverse e.V.
                   <br />
                   Jülicher Str. 209q-s
                   <br />
