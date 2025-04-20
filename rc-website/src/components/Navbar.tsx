@@ -61,7 +61,9 @@ export function Navbar() {
                 width={150}
                 height={30}
                 className={`h-8 w-auto transition-opacity duration-600ms ${
-                  isScrolled ? "opacity-0 max-w-[150-px]" : "opacity-100 max-w-[150px]"
+                  isScrolled
+                    ? "opacity-0 max-w-[150-px]"
+                    : "opacity-100 max-w-[150px]"
                 }`}
               />
             </Link>
@@ -86,7 +88,7 @@ export function Navbar() {
                   : "text-gray-300 hover:text-white"
               }`}
             >
-              About Us
+              About
             </Link>
             <Link
               href="/projects"
@@ -123,8 +125,8 @@ export function Navbar() {
           <div className="hidden md:block">
             <Link href="/contact">
               <Button
-                 variant="outline"
-                 className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/20 px-8 py-2 rounded-3xl w-full"
+                variant="outline"
+                className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/20 px-8 py-2 rounded-3xl w-full"
               >
                 Join Us
               </Button>
@@ -208,7 +210,6 @@ export function Navbar() {
             >
               Join Us
             </Button>
-            
           </div>
         </div>
       )}
