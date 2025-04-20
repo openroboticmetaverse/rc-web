@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,16 +9,8 @@ import { useToast } from "@/components/ui/use-toast";
 import { Mail, MapPin, Send, Bot, Wrench } from "lucide-react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 
-type SearchParams = {
-  source?: string | string[];
-  action?: string | string[];
-};
-
-export default function ContactPageContent({
-  searchParams,
-}: {
-  searchParams?: SearchParams;
-}) {
+export default function ContactPageContent() {
+  const searchParams = useSearchParams();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
@@ -29,7 +22,10 @@ export default function ContactPageContent({
 
   // Check if user came from error page
   useEffect(() => {
-    if (searchParams?.source === "404" && searchParams?.action === "join") {
+    const source = searchParams.get("source");
+    const action = searchParams.get("action");
+
+    if (source === "404" && action === "join") {
       setShowErrorPageMessage(true);
 
       // Optional: Pre-fill the message for users coming from the error page
