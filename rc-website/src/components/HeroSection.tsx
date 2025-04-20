@@ -100,11 +100,9 @@ export const HeroSection = () => {
           preload="auto"
           className="absolute w-full h-full object-cover z-0"
         >
-          <source src="/hero.webm" type="video/webm" />
-          {/* Fallback for browsers that don't support WebM */}
           <source
-            src="https://videos.pexels.com/video-files/7688616/7688616-uhd_2732_1440_24fps.mp4"
-            type="video/mp4"
+            src="https://res.cloudinary.com/dilan3qfq/video/upload/v1745159975/h9s9mcjx0okpvll66gmg.webm"
+            type="video/webm"
           />
         </video>
         <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-primary/20 rounded-full filter blur-3xl animate-pulse-slow z-20"></div>
