@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
   return (
-    <div className="bg-card rounded-3xl overflow-hidden group transition-all duration-300 hover:translate-y-[-4px] hover:shadow-lg">
+    <div className="bg-card rounded-3xl overflow-hidden group transition-all duration-300 hover:translate-y-[-4px] hover:shadow-lg flex flex-col h-full">
       <Link href={`/projects/${project.slug}`}>
         <div className="h-48 overflow-hidden">
           <img
@@ -22,13 +22,13 @@ const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
           />
         </div>
       </Link>
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <Link href={`/projects/${project.slug}`}>
           <h3 className="text-xl font-bold mb-2 text-primary hover:text-primary/80">
             {project.title}
           </h3>
         </Link>
-        <p className="text-gray-300 mb-4">{project.description}</p>
+        <p className="text-gray-300 mb-4 flex-grow">{project.description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map((tag, index) => (
             <span
@@ -39,15 +39,17 @@ const ProjectCard = ({ project }: { project: (typeof projects)[0] }) => {
             </span>
           ))}
         </div>
-        <Link href={`/projects/${project.slug}`}>
-          <Button
-            variant="ghost"
-            className="text-primary p-0 group hover:bg-transparent hover:no-underline"
-          >
-            Learn More{" "}
-            <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-          </Button>
-        </Link>
+        <div className="mt-auto">
+          <Link href={`/projects/${project.slug}`}>
+            <Button
+              variant="ghost"
+              className="text-primary p-0 group hover:bg-transparent hover:no-underline"
+            >
+              Learn More{" "}
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -190,7 +190,8 @@ export default function ContactPageContent() {
 
                     <Button
                       type="submit"
-                      className="bg-[#E6AF2E] hover:bg-[#E6AF2E]/90 text-black font-medium w-full sm:w-auto"
+                      variant="outline"
+                      className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/20 px-8 py-6 text-lg rounded-3xl"
                       disabled={isSubmitting}
                     >
                       {isSubmitting ? (

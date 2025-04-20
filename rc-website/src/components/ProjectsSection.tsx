@@ -7,7 +7,7 @@ import Link from 'next/link';
 
 const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
   return (
-    <div className="bg-card rounded-3xl overflow-hidden group transition-all duration-300 hover:translate-y-[-1px] hover:shadow-lg">
+    <div className="bg-card rounded-3xl overflow-hidden group transition-all duration-300 hover:translate-y-[-1px] hover:shadow-lg flex flex-col h-full">
       <div className="h-48 overflow-hidden">
         <img 
           src={project.image} 
@@ -15,14 +15,16 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold mb-2 text-primary">{project.title}</h3>
-        <p className="text-gray-300 mb-4">{project.description}</p>
-        <Link href={`/projects/${project.slug}`}>
-          <Button variant="ghost" className="text-primary p-0 group hover:bg-transparent hover:no-underline">
-            Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-          </Button>
-        </Link>
+        <p className="text-gray-300 mb-4 flex-grow">{project.description}</p>
+        <div className="mt-auto">
+          <Link href={`/projects/${project.slug}`}>
+            <Button variant="ghost" className="text-primary p-0 group hover:bg-transparent hover:no-underline">
+              Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -53,9 +55,13 @@ const ProjectsSection = () => {
         
         <div className="text-center mt-12">
           <Link href="/projects">
-            <Button variant="outline" className="group">
-              View All Projects <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
+              <Button 
+                variant="outline"
+                className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/20 px-8 py-6 text-lg rounded-3xl"
+                size="default"
+              >
+                View All Projects<ArrowRight className="ml-2 h-4 w-5 transition-transform group-hover:translate-x-1" />
+              </Button>
           </Link>
         </div>
       </div>

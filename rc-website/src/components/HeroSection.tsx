@@ -98,7 +98,7 @@ export const HeroSection = () => {
           muted
           playsInline
           preload="auto"
-          className="absolute w-full h-full object-cover z-0"
+          className="absolute w-full h-full object-cover z-0 transform -translate-y-8"
         >
           <source
             src="https://res.cloudinary.com/dilan3qfq/video/upload/v1745159975/h9s9mcjx0okpvll66gmg.webm"
@@ -113,8 +113,8 @@ export const HeroSection = () => {
         <div className="text-center max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-xl md:text-6xl lg:text-7xl font-bold mb-6">
             <span className="block glow">
-              together, we shape the future of{" "}
-              <span className="text-primary">robotics</span>
+              <span className= "text-primary">together,</span> we shape the future of{" "}
+              robotics
             </span>
           </h1>
 
@@ -126,20 +126,13 @@ export const HeroSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/projects">
               <Button
-                variant="default"
-                className="bg-primary hover:bg-primary/80 text-white px-8 py-6 text-lg rounded-3xl"
+                variant="outline"
+                className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/20 px-8 py-6 text-lg rounded-3xl"
               >
                 Explore Our Projects
               </Button>
             </Link>
-            <Link href="/contact">
-              <Button
-                variant="outline"
-                className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/20 px-8 py-6 text-lg rounded-3xl"
-              >
-                Join the Collective <ChevronRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+            
           </div>
         </div>
       </div>

@@ -26,7 +26,6 @@ export default function Home() {
       <AboutSection />
       <StatsSlider />
       <ProjectsSection />
-      <ContactSection />
       <FAQSection />
       <PartnersSection />
       <CTASection />

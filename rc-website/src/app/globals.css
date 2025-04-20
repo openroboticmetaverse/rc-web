@@ -138,30 +138,6 @@
   }
 }
 
-/* Partners Section Spotlight Effect */
-.partners-spotlight-container {
-  position: relative;
-  overflow: hidden;
-}
-
-.partners-spotlight::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-    circle at center,
-    transparent 30%,
-    rgba(0, 0, 0, 0.3) 50%,
-    rgba(0, 0, 0, 0.8) 80%,
-    rgba(0, 0, 0, 1) 100%
-  );
-  pointer-events: none;
-  z-index: 10;
-}
-
 /* Smooth sliding animation */
 .partners-smooth-scroll {
   transition: transform 1000ms cubic-bezier(0.25, 1, 0.35, 1);
@@ -169,7 +145,7 @@
 
 /* Partner logo styles */
 .partner-logo {
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition: transform 0.5s ease;
 }
 
 .partner-logo:hover {
