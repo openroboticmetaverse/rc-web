@@ -6,6 +6,8 @@ import {
   partnerOrganizations,
   getCoreTeamMembers,
 } from "@/data/team";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About | Robotics Collective",
@@ -157,12 +159,15 @@ export default function AboutPage() {
                       you thrive on shaping strategy, mentoring talent, and
                       building open‑source robotics, we'd love to meet you.
                     </p>
-                    <a
-                      href="/contact"
-                      className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-black bg-primary hover:bg-primary/90 transition-colors duration-300"
+                    <Link
+                      href="/contact">
+                      <Button 
+                      variant="default" 
+                      className="px-8 py-6 text-lg rounded-3xl"
+                      size="lg"
                     >
-                      Join Our Team
-                    </a>
+                      Join Our Team  </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -326,12 +331,15 @@ export default function AboutPage() {
                   in academia, research, and industry to advance robotics
                   innovation.
                 </p>
-                <a
-                  href="/contact"
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-black bg-primary hover:bg-primary/90 transition-colors duration-300"
-                >
-                  Get in Touch
-                </a>
+                <Link
+                      href="/contact">
+                      <Button 
+                      variant="default" 
+                      className="px-8 py-6 text-lg rounded-3xl"
+                      size="lg"
+                    >
+                      Get in Touch  </Button>
+                    </Link>
               </div>
             </div>
           </div>

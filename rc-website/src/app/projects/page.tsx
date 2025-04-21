@@ -242,14 +242,15 @@ export default function ProjectsPage() {
                 We're always looking for new collaborations and innovative ideas
                 to push the boundaries of robotics.
               </p>
-              <Link href="/contact">
-                <Button
-                  variant="outline"
-                  className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/20 px-8 py-6 text-lg rounded-3xl"
-                >
-                  Propose a Project
-                </Button>
-              </Link>
+              <Link
+                      href="/contact">
+                      <Button 
+                      variant="default" 
+                      className="px-8 py-6 text-lg rounded-3xl"
+                      size="lg"
+                    >
+                      Propose a Project </Button>
+                    </Link>
             </div>
           </div>
         </section>

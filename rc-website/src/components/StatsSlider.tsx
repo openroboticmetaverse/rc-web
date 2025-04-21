@@ -127,7 +127,7 @@ export default function StatsSlider() {
         className="sticky top-0 left-0 w-full h-screen flex items-center justify-center bg-black z-10"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+          <h2 className="text-4xl md:text-4xl font-bold mb-4 text-center">
             <span className="text-primary">Robotics</span> Community
           </h2>
           <p className="text-center text-gray-300 mb-16 max-w-2xl mx-auto">
