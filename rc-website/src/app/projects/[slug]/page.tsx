@@ -109,7 +109,7 @@ export default async function ProjectPage({
           <Link href="/projects">
             <Button
               variant="outline"
-              className="mb-6 flex items-center gap-2 text-white border-white/20 bg-black/30 backdrop-blur-sm hover:bg-black/50"
+              className="mb-6 flex items-center gap-2 text-white border-white/20 bg-black/30 backdrop-blur-sm hover:bg-black/50 rounded-3xl"
             >
               <ArrowLeft size={16} />
               Back to Projects
