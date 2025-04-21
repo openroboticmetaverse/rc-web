@@ -40,7 +40,7 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/90 backdrop-blur-md shadow-md"
+          ? "bg-background/30 backdrop-blur-xl shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -126,7 +126,7 @@ export function Navbar() {
             <Link href="/contact">
               <Button
                 variant="outline"
-                className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/20 px-8 py-2 rounded-3xl w-full"
+                className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/90 hover:text-white px-8 py-2 rounded-3xl w-full"
               >
                 Join Us
               </Button>
@@ -205,7 +205,7 @@ export function Navbar() {
             </Link>
             <Button
               variant="outline"
-              className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/20 px-8 py-6 rounded-3xl w-full"
+              className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/90 hover:text-white px-8 py-6 rounded-3xl w-full"
               onClick={() => setMobileMenuOpen(false)}
             >
               Join Us
