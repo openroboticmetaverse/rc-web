@@ -1,4 +1,4 @@
-import { Calendar, MapPin, Users } from "lucide-react";
+import { Calendar, MapPin, Users, Clock } from "lucide-react";
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 import CTASection from "@/components/CTASection";
@@ -15,11 +15,51 @@ export const metadata: Metadata = {
   ],
 };
 
+/* "https://res.cloudinary.com/dilan3qfq/image/upload/v1727137785/openroboverse/Meetup/meetup_logo_xt2pev.jpg",
+"https://res.cloudinary.com/dilan3qfq/image/upload/v1727137781/openroboverse/Meetup/meetup_back_cjvymg.jpg",
+"https://res.cloudinary.com/dilan3qfq/image/upload/v1727137776/openroboverse/Meetup/meetup_pre_up1_fohztd.jpg",
+"https://res.cloudinary.com/dilan3qfq/image/upload/v1727138102/openroboverse/Meetup/meetup_pre_up3_ojmush.jpg",
+"https://res.cloudinary.com/dilan3qfq/image/upload/v1745223313/1730150684425_qqtque.jpg",
+"https://res.cloudinary.com/dilan3qfq/image/upload/v1745223313/1730150684646-3_h250bh.jpg",
+"https://res.cloudinary.com/dilan3qfq/image/upload/v1745223313/1730150684504-2_c3oalr.jpg ",
+ */
 const galleryImages = [
-  "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1515187029135-18ee286d815b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  {
+    src: "https://res.cloudinary.com/dilan3qfq/image/upload/v1727137785/openroboverse/Meetup/meetup_logo_xt2pev.jpg",
+    span: "col-span-2 row-span-2",
+    alt: "orom logo picture meetup #1",
+  },
+
+  {
+    src: "https://res.cloudinary.com/dilan3qfq/image/upload/v1745223313/1730150684646-3_h250bh.jpg",
+    span: "col-span-2 row-span-2",
+    alt: "orom logo picture meetup #2",
+  },
+  {
+    src: "https://res.cloudinary.com/dilan3qfq/image/upload/v1727137781/openroboverse/Meetup/meetup_back_cjvymg.jpg",
+    span: "col-span-2 row-span-1",
+    alt: "Orom stand",
+  },
+  {
+    src: "https://res.cloudinary.com/dilan3qfq/image/upload/v1727137776/openroboverse/Meetup/meetup_pre_up1_fohztd.jpg",
+    span: "col-span-2 row-span-1",
+    alt: "Adience Elysee",
+  },
+  {
+    src: "https://res.cloudinary.com/dilan3qfq/image/upload/v1745223313/1730150684504-2_c3oalr.jpg",
+    span: "col-span-1 row-span-1",
+    alt: "WZL Pitch",
+  },
+  {
+    src: "https://res.cloudinary.com/dilan3qfq/image/upload/v1727138102/openroboverse/Meetup/meetup_pre_up3_ojmush.jpg",
+    span: "col-span-1 row-span-1",
+    alt: "Vectioneer stand",
+  },
+  {
+    src: "https://res.cloudinary.com/dilan3qfq/image/upload/v1745223313/1730150684425_qqtque.jpg",
+    span: "col-span-2 row-span-1",
+    alt: "Siemens Pitch",
+  },
 ];
 
 export default function MeetupPage() {
@@ -28,12 +68,12 @@ export default function MeetupPage() {
       <div className="">
         {/* Hero Section */}
         <section className="relative py-16 md:py-24">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-background z-0">
-            <div className="absolute inset-0 bg-card/30 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background z-0">
+            <div></div>
             <img
-              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80"
+              src="https://res.cloudinary.com/dilan3qfq/image/upload/v1727137785/openroboverse/Meetup/meetup_logo_xt2pev.jpg"
               alt="Robotics Meetup"
-              className="w-full h-full object-cover opacity-20"
+              className="w-full h-full object-cover opacity-30"
             />
           </div>
 
@@ -43,42 +83,50 @@ export default function MeetupPage() {
                 Robotics Community <span className="text-primary">Meetup</span>
               </h1>
               <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-                Connect with the robotic community in Aachen at our biannual
-                event for innovation, collaboration, and inspiration.
+                Our Robotics Community Meetups are designed to foster
+                collaboration, knowledge exchange, and networking within the
+                local robotics community. Join us to connect with like-minded
+                enthusiasts, share ideas, and stay at the forefront of robotics
+                innovation.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
                 <div className="bg-card p-6 rounded-lg flex items-center justify-center flex-col">
                   <Calendar className="text-primary h-8 w-8 mb-3" />
-                  <h3 className="text-lg font-semibold mb-1">Next Event</h3>
-                  <p className="text-gray-300">October 15-16, 2025</p>
+                  <h3 className="text-lg font-semibold mb-1">Date</h3>
+                  <p className="text-gray-300">April 23, 2025</p>
+                </div>
+                <div className="bg-card p-6 rounded-lg flex items-center justify-center flex-col">
+                  <Clock className="text-primary h-8 w-8 mb-3" />
+                  <h3 className="text-lg font-semibold mb-1">Time</h3>
+                  <p className="text-gray-300">6:30 PM - 9:00 PM</p>
                 </div>
                 <a
-                  href="https://maps.google.com/maps?q=Jülicher+Str.+209q-s,+52070+Aachen,+Germany"
+                  href="https://maps.google.com/maps?q=Digital+Church,+Aachen,+Germany"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-card p-6 rounded-lg flex items-center justify-center flex-col hover:bg-card/80 transition-colors"
                 >
                   <MapPin className="text-primary h-8 w-8 mb-3" />
                   <h3 className="text-lg font-semibold mb-1">Location</h3>
-                  <p className="text-gray-300">Robotics Collective e.V.</p>
-                  <p className="text-gray-300">Jülicher Str. 209q-s</p>
-                  <p className="text-gray-300">52070 Aachen, Germany</p>
+                  <p className="text-gray-300">Digital Church</p>
+                  <p className="text-gray-300">Aachen, Germany</p>
                 </a>
-                <div className="bg-card p-6 rounded-lg flex items-center justify-center flex-col">
-                  <Users className="text-primary h-8 w-8 mb-3" />
-                  <h3 className="text-lg font-semibold mb-1">Participants</h3>
-                  <p className="text-gray-300">200+ Expected</p>
-                </div>
               </div>
 
-             
-              <Button 
-                variant="outline"
-                className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/20 px-8 py-6 text-lg rounded-3xl"
+              <a
+                href="https://lu.ma/e61lkaj1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block"
               >
-                Register for the event
-              </Button>
+                <Button
+                  variant="outline"
+                  className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary px-8 py-6 text-lg rounded-3xl mt-12"
+                >
+                  Register Now
+                </Button>
+              </a>
             </div>
           </div>
         </section>
@@ -87,57 +135,52 @@ export default function MeetupPage() {
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-8">
-                About the <span className="text-primary">Meetup</span>
+              <h2 className="text-3xl font-bold mb-8 text-center">
+                What to <span className="text-primary">Expect</span>
               </h2>
-              <div className="text-lg text-gray-300 space-y-6">
-                <p>
-                  The Robotics Collective Meetup is a biannual gathering that
-                  brings together enthusiasts, researchers, engineers, and
-                  industry professionals passionate about advancing the field of
-                  robotics.
-                </p>
-                <p>
-                  Our event features keynote presentations from leading experts,
-                  hands-on workshops, project showcases, and ample networking
-                  opportunities to foster collaboration and innovation within
-                  the robotics community in Aachen and beyond.
-                </p>
-                <p>
-                  Whether you're a seasoned professional or just starting your
-                  journey in robotics, our meetup provides a platform to learn,
-                  share, and connect with like-minded individuals who are
-                  shaping the future of intelligent machines.
-                </p>
-              </div>
-
-              <h3 className="text-2xl font-semibold mt-12 mb-6">
-                What to Expect
-              </h3>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <li className="bg-card p-4 rounded-md">
-                  <span className="text-primary font-medium">Expert Talks</span>{" "}
-                  on cutting-edge research and industry trends
+                <li className="bg-card p-6 rounded-md">
+                  <span className="text-primary font-medium">Networking</span>{" "}
+                  opportunities with students and professionals
                 </li>
-                <li className="bg-card p-4 rounded-md">
+                <li className="bg-card p-6 rounded-md">
                   <span className="text-primary font-medium">
-                    Interactive Workshops
+                    Short Pitches
                   </span>{" "}
-                  for hands-on learning
+                  and interactive sessions showcasing latest robotic projects
                 </li>
-                <li className="bg-card p-4 rounded-md">
+                <li className="bg-card p-6 rounded-md">
                   <span className="text-primary font-medium">
-                    Project Showcases
+                    Engaging Discussions
                   </span>{" "}
-                  from academic and industry teams
+                  on cutting-edge robotics topics
                 </li>
-                <li className="bg-card p-4 rounded-md">
+                <li className="bg-card p-6 rounded-md">
                   <span className="text-primary font-medium">
-                    Networking Sessions
+                    Collaborative Workshops
                   </span>{" "}
-                  to connect with peers and potential collaborators
+                  for problem-solving and innovation
+                </li>
+                <li className="bg-card p-6 rounded-md col-span-1 md:col-span-2">
+                  Free{" "}
+                  <span className="text-primary font-medium">
+                    Food & Drinks
+                  </span>{" "}
+                  in a lively atmosphere
                 </li>
               </ul>
+
+              <div className="mt-12 bg-card/50 p-8 rounded-lg">
+                <h3 className="text-2xl font-semibold mb-6 text-center">
+                  Join Our Next <span className="text-primary">Meetup</span>
+                </h3>
+                <p className="text-lg text-gray-300">
+                  Don't miss this chance to connect with experts, gain insights
+                  into the latest advancements, and grow your professional
+                  network. Our meetups are a melting pot of ideas, innovation,
+                  and inspiration.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -148,15 +191,15 @@ export default function MeetupPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">
               Past <span className="text-primary">Events</span>
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] md:auto-rows-[250px] gap-4">
               {galleryImages.map((image, index) => (
                 <div
                   key={index}
-                  className="overflow-hidden rounded-lg aspect-square"
+                  className={`overflow-hidden rounded-lg ${image.span}`}
                 >
                   <img
-                    src={image}
-                    alt={`Past event ${index + 1}`}
+                    src={image.src}
+                    alt={image.alt}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
                 </div>
