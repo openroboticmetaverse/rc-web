@@ -30,31 +30,23 @@ export function Footer() {
           {/* Navigation - Right */}
           <div className="text-right">
             <ul className="space-y-2 mt-2">
+              
               <li>
-                <Link href="/" className="hover:text-white transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-white transition-colors">
+                <Link href="/about" className="text-4xl hover:text-white transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="hover:text-white transition-colors">
+                <Link href="/projects" className="text-4xl hover:text-white transition-colors">
                   Projects
                 </Link>
               </li>
               <li>
-                <Link href="/meetup" className="hover:text-white transition-colors">
+                <Link href="/meetup" className="text-4xl hover:text-white transition-colors">
                   Meetup
                 </Link>
               </li>
-              <li>
-                <Link href="/contact" className="hover:text-white transition-colors">
-                  Contact
-                </Link>
-              </li>
+              
             </ul>
           </div>
         </div>

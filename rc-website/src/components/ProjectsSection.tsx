@@ -40,7 +40,7 @@ const ProjectsSection = () => {
   return (
     <section id="projects" className="py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+        <h2 className="text-4xl md:text-4xl font-bold mb-4 text-center">
           <span className="text-primary">Core</span> Projects
         </h2>
         <p className="text-center text-gray-300 mb-16 max-w-2xl mx-auto">
@@ -56,9 +56,9 @@ const ProjectsSection = () => {
         <div className="text-center mt-12">
           <Link href="/projects">
               <Button 
-                variant="outline"
-                className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/20 px-8 py-6 text-lg rounded-3xl"
-                size="default"
+                variant="default" 
+                className="px-8 py-6 text-lg rounded-3xl"
+                size="lg"
               >
                 View All Projects<ArrowRight className="ml-2 h-4 w-5 transition-transform group-hover:translate-x-1" />
               </Button>

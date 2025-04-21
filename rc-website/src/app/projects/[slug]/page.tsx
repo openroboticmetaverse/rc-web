@@ -191,7 +191,7 @@ export default async function ProjectPage({
                     rel="noopener noreferrer"
                   >
                     <Button
-                      variant="outline"
+                      variant="secondary"
                       className="flex items-center gap-2"
                     >
                       <Github size={16} />
@@ -206,7 +206,7 @@ export default async function ProjectPage({
                     rel="noopener noreferrer"
                   >
                     <Button
-                      variant="outline"
+                      variant="secondary"
                       className="flex items-center gap-2"
                     >
                       <Globe size={16} />

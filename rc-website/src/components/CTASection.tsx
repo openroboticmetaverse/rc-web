@@ -35,8 +35,8 @@ const CTASection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
               <Button
-                variant="outline"
-                className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/20 px-8 py-6 text-lg rounded-3xl"
+                variant="default"
+                className="px-8 py-6 text-lg rounded-3xl"
                 size="lg"
               >
                 Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
@@ -48,8 +48,8 @@ const CTASection = () => {
               target="_blank"
             >
               <Button
-                variant="outline"
-                className="bg-[#C03221] text-white hover:bg-[#C03221]/80 px-8 py-6 text-lg rounded-3xl"
+                variant="secondary"
+                className=" text-lg px-8 py-6 rounded-3xl"
                 size="lg"
               >
                 Donate

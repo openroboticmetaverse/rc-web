@@ -125,8 +125,7 @@ export function Navbar() {
           <div className="hidden md:block">
             <Link href="/contact">
               <Button
-                variant="outline"
-                className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/90 hover:text-white px-8 py-2 rounded-3xl w-full"
+                variant="default"
               >
                 Join Us
               </Button>
@@ -204,8 +203,7 @@ export function Navbar() {
               Contact
             </Link>
             <Button
-              variant="outline"
-              className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary/90 hover:text-white px-8 py-6 rounded-3xl w-full"
+              variant="default"
               onClick={() => setMobileMenuOpen(false)}
             >
               Join Us

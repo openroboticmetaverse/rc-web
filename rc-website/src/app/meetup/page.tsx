@@ -121,8 +121,9 @@ export default function MeetupPage() {
                 className="inline-block"
               >
                 <Button
-                  variant="outline"
-                  className="border-yellow-secondary bg-yellow-secondary/10 text-yellow-secondary hover:bg-yellow-secondary px-8 py-6 text-lg rounded-3xl mt-12"
+                  variant="default"
+                  className="px-8 py-6 text-lg rounded-3xl mt-3"
+                  size="lg"
                 >
                   Register Now
                 </Button>
