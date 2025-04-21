@@ -42,26 +42,26 @@ const StatCard: React.FC<StatCardProps> = ({
 export default function StatsSlider() {
   const stats = [
     {
-      percentage: "40M+",
+      percentage: "5x Growth",
       description:
-        "The global robotics market is projected to exceed 40 million units by 2026, with service robots leading the growth.",
-      source: "International Federation of Robotics, 2025",
+        "The industrial robotics market is projected to grow by over 430%, jumping from $55.1B in 2025 to $291.1B by 2035 as automation reshapes manufacturing.",
+      source: "Global Industry Analysts, 2025",
       backgroundColor: "bg-primary",
       textColor: "text-white",
     },
     {
-      percentage: "63%",
+      percentage: "4x Larger",
       description:
-        "of robotics community members collaborate across borders, making it one of the most globally integrated technical fields.",
-      source: "Robotics Community Survey, 2024",
+        "Robotics as a whole is on track to grow by more than 340%, jumping from $47.8B in 2024 to $211.1B by 2034, driven by demand in e-commerce, logistics, and smart factories.",
+      source: "NextMove Strategy Consulting, 2025",
       backgroundColor: "bg-yellow-secondary",
       textColor: "text-black",
     },
     {
-      percentage: "94%",
+      percentage: "18%/Year",
       description:
-        "of robotics projects now incorporate open-source components, a dramatic increase from just 37% in 2020.",
-      source: "Open Robotics Foundation, 2025",
+        "Humanoid robots are growing fast, with the market expanding by 18% every year. Driven by breakthroughs in mobility, AI, and healthcare applications.",
+      source: "GlobeNewswire, 2025",
       backgroundColor: "bg-[#C03221]",
       textColor: "text-white",
     },
@@ -127,12 +127,13 @@ export default function StatsSlider() {
         className="sticky top-0 left-0 w-full h-screen flex items-center justify-center bg-black z-10"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-            <span className="text-primary">Robotics</span> Community
+          <h2 className="text-4xl md:text-4xl font-bold mb-4 text-center">
+            <span className="text-primary">Robotics</span> Worldwide
           </h2>
           <p className="text-center text-gray-300 mb-16 max-w-2xl mx-auto">
-            Discover key insights and trends shaping the global robotics
-            community and collaborative innovation landscape.
+            Explore key insights into the global robotics market and get a
+            snapshot of the dynamic changes that are shaping the future of
+            robotics.
           </p>
 
           <div className="relative overflow-hidden">

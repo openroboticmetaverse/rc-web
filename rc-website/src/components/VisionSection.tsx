@@ -43,7 +43,7 @@ export const VisionSection = () => {
       {/* Content container */}
       <div className="container px-4 md:px-6 relative z-10">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16">
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl mb-4">
+          <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl mb-4">
             Our <span className="text-primary">Vision</span>
           </h2>
 

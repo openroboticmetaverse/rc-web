@@ -27,7 +27,7 @@ export default function Home() {
       <StatsSlider />
       <ProjectsSection />
       <FAQSection />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
       <CTASection />
     </main>
   );

@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
 import { Github, Linkedin, Mail } from "lucide-react";
+import {
+  teamMembers,
+  communityMembers,
+  partnerOrganizations,
+  getCoreTeamMembers,
+} from "@/data/team";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About | Robotics Collective",
@@ -7,142 +15,16 @@ export const metadata: Metadata = {
   keywords: ["about us", "robotics team", "mission", "values", "history"],
 };
 
-const coreTeamMembers = [
-  {
-    id: 1,
-    name: "Amine Kharrat",
-    role: "Lead",
-    description:
-      "Specializes in robot perception systems with 15+ years of industry experience across major robotics labs.",
-    image:
-      "https://res.cloudinary.com/dilan3qfq/image/upload/t_reduced-size/v1702467097/openroboverse/team/amine_ea0ijk.jpg",
-    linkedin: "https://linkedin.com/in/aminekharrat",
-    github: "https://github.com/AmineKharrat",
-    email: "amine@roboticscollective.org",
-    isBoard: true,
-  },
-  {
-    id: 2,
-    name: "Karim Siala",
-    role: "Dev Lead",
-    description:
-      "Former Google AI researcher who leads our machine learning infrastructure and decision-making systems.",
-    image:
-      "https://res.cloudinary.com/dilan3qfq/image/upload/v1702467105/openroboverse/team/karim_kddxb5.jpg",
-    linkedin: "https://linkedin.com/in/karimsiala",
-    github: "https://github.com/karimsiala",
-    email: "karim@roboticscollective.org",
-    isBoard: true,
-  },
-  {
-    id: 3,
-    name: "Jan Strehl",
-    role: "Orga",
-    image:
-      "https://res.cloudinary.com/dilan3qfq/image/upload/v1702467105/openroboverse/team/jan_v4l9n0.jpg",
-    linkedin: "https://linkedin.com/in/janstrehl",
-    github: "https://github.com/strehljd",
-    isBoard: false,
-  },
-  {
-    id: 4,
-    name: "Edilbert Christhuraj",
-    role: "Dev",
-    image:
-      "https://res.cloudinary.com/dilan3qfq/image/upload/v1702467105/openroboverse/team/edi_jovhhj.jpg",
-    linkedin: "https://linkedin.com/in/echristhuraj",
-    github: "https://github.com/19ec94",
-    isBoard: false,
-  },
-  {
-    id: 5,
-    name: "Siddarth S. Pillai",
-    role: "Dev",
-    image:
-      "https://res.cloudinary.com/dilan3qfq/image/upload/v1702467105/openroboverse/team/kikbby0numfyxnzghmfe",
-    linkedin: "https://linkedin.com/in/siddarthspillai",
-    github: "https://github.com/siddarth-s-pillai",
-    isBoard: false,
-  },
-  {
-    id: 6,
-    name: "Youssef",
-    role: "Dev",
-    image:
-      "https://res.cloudinary.com/dilan3qfq/image/upload/v1702467105/openroboverse/team/youssef_myif9n.jpg",
-    linkedin: "https://linkedin.com/in/youssef-aloulou-7b1443162/",
-    github: "https://github.com/openroboticmetaverse",
-    isBoard: false,
-  },
-];
-
-const communityMembers = [
-  {
-    id: 101,
-    name: "Mia Zhang",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  },
-  {
-    id: 102,
-    name: "Jamal Washington",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  },
-  {
-    id: 103,
-    name: "Lena Müller",
-    image:
-      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  },
-  {
-    id: 104,
-    name: "Raj Patel",
-    image:
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  },
-  {
-    id: 105,
-    name: "Lucia Fernandez",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  },
-  {
-    id: 106,
-    name: "Hiroshi Tanaka",
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-  },
-];
-
-const partnerOrganizations = [
-  {
-    id: 201,
-    name: "RWTH Aachen University",
-    logo: "https://res.cloudinary.com/dilan3qfq/image/upload/v1702467105/openroboverse/partners/rwth-logo.png",
-    website: "https://www.rwth-aachen.de/",
-  },
-  {
-    id: 202,
-    name: "Technical University of Munich",
-    logo: "https://res.cloudinary.com/dilan3qfq/image/upload/v1702467105/openroboverse/partners/tum-logo.png",
-    website: "https://www.tum.de/",
-  },
-  {
-    id: 203,
-    name: "German Research Center for Artificial Intelligence",
-    logo: "https://res.cloudinary.com/dilan3qfq/image/upload/v1702467105/openroboverse/partners/dfki-logo.png",
-    website: "https://www.dfki.de/",
-  },
-  {
-    id: 204,
-    name: "Fraunhofer Institute",
-    logo: "https://res.cloudinary.com/dilan3qfq/image/upload/v1702467105/openroboverse/partners/fraunhofer-logo.png",
-    website: "https://www.fraunhofer.de/",
-  },
-];
-
 export default function AboutPage() {
+  // Get the leadership team (first two members who are on the board)
+  const leadershipTeam = teamMembers
+    .filter((member) => member.isBoard)
+    .slice(0, 2);
+  // Get the rest of the core team (excluding the leadership team)
+  const coreTeam = teamMembers.filter(
+    (member) => !leadershipTeam.includes(member)
+  );
+
   return (
     <div className="min-h-screen bg-background">
       <div className="">
@@ -209,7 +91,7 @@ export default function AboutPage() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {coreTeamMembers.slice(0, 2).map((member) => (
+              {leadershipTeam.map((member) => (
                 <div
                   key={member.id}
                   className="flex flex-col items-center group transition-all duration-300 hover:translate-y-[-4px]"
@@ -229,18 +111,18 @@ export default function AboutPage() {
                     {member.description}
                   </p>
                   <div className="flex mt-3 space-x-4">
-                    {member.email && (
+                    {member.contact?.email && (
                       <a
-                        href={`mailto:${member.email}`}
+                        href={`mailto:${member.contact.email}`}
                         className="text-primary hover:text-primary/80 transition-colors"
                         aria-label={`Email ${member.name}`}
                       >
                         <Mail className="w-6 h-6" />
                       </a>
                     )}
-                    {member.linkedin && (
+                    {member.contact?.linkedin && (
                       <a
-                        href={member.linkedin}
+                        href={member.contact.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:text-primary/80 transition-colors"
@@ -249,9 +131,9 @@ export default function AboutPage() {
                         <Linkedin className="w-6 h-6" />
                       </a>
                     )}
-                    {member.github && (
+                    {member.contact?.github && (
                       <a
-                        href={member.github}
+                        href={member.contact.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:text-primary/80 transition-colors"
@@ -277,12 +159,15 @@ export default function AboutPage() {
                       you thrive on shaping strategy, mentoring talent, and
                       building open‑source robotics, we'd love to meet you.
                     </p>
-                    <a
-                      href="/contact"
-                      className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-black bg-primary hover:bg-primary/90 transition-colors duration-300"
+                    <Link
+                      href="/contact">
+                      <Button 
+                      variant="default" 
+                      className="px-8 py-6 text-lg rounded-3xl"
+                      size="lg"
                     >
-                      Join Our Team
-                    </a>
+                      Join Our Team  </Button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -298,7 +183,7 @@ export default function AboutPage() {
             </h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {coreTeamMembers.slice(2).map((member) => (
+              {coreTeam.map((member) => (
                 <div
                   key={member.id}
                   className="flex flex-col items-center group transition-all duration-300 hover:translate-y-[-4px]"
@@ -340,18 +225,18 @@ export default function AboutPage() {
                   </h3>
                   <p className="text-primary">{member.role}</p>
                   <div className="flex mt-3 space-x-4">
-                    {member.email && (
+                    {member.contact?.email && (
                       <a
-                        href={`mailto:${member.email}`}
+                        href={`mailto:${member.contact.email}`}
                         className="text-primary hover:text-primary/80 transition-colors"
                         aria-label={`Email ${member.name}`}
                       >
                         <Mail className="w-5 h-5" />
                       </a>
                     )}
-                    {member.linkedin && (
+                    {member.contact?.linkedin && (
                       <a
-                        href={member.linkedin}
+                        href={member.contact.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:text-primary/80 transition-colors"
@@ -360,9 +245,9 @@ export default function AboutPage() {
                         <Linkedin className="w-5 h-5" />
                       </a>
                     )}
-                    {member.github && (
+                    {member.contact?.github && (
                       <a
-                        href={member.github}
+                        href={member.contact.github}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:text-primary/80 transition-colors"
@@ -446,12 +331,15 @@ export default function AboutPage() {
                   in academia, research, and industry to advance robotics
                   innovation.
                 </p>
-                <a
-                  href="/contact"
-                  className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-black bg-primary hover:bg-primary/90 transition-colors duration-300"
-                >
-                  Get in Touch
-                </a>
+                <Link
+                      href="/contact">
+                      <Button 
+                      variant="default" 
+                      className="px-8 py-6 text-lg rounded-3xl"
+                      size="lg"
+                    >
+                      Get in Touch  </Button>
+                    </Link>
               </div>
             </div>
           </div>

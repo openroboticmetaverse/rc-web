@@ -52,6 +52,7 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
         "yellow-secondary": "#e6af2e",
+        "red-accent": "#C03221",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,9 +81,9 @@ const config: Config = {
         }
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        "pulse-slow": "pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "accordion-down": "accordion-down 0.3s ease-out",
+        "accordion-up": "accordion-up 0.3s ease-out",
+        "pulse-slow": "pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         "fade-in": "fade-in 0.8s ease-in-out"
       },
     },
