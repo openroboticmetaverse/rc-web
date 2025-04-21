@@ -113,14 +113,14 @@ export const HeroSection = () => {
         <div className="text-center max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-6xl sm:text-6xl md:text-7xl lg:text-7xl font-bold mb-6">
             <span className="block glow">
-              <span className= "text-primary">together,</span> we shape the future of{" "}
-              robotics
+              <span className="text-primary">together</span>, we shape the
+              future of robotics
             </span>
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
-            We are a collective of robotics and AI enthusiasts pushing the
-            boundaries through innovation.
+            We are an open ecosystem enabling continious learning innovation and
+            collaboration.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -133,7 +133,6 @@ export const HeroSection = () => {
                 Explore Our Projects
               </Button>
             </Link>
-            
           </div>
         </div>
       </div>

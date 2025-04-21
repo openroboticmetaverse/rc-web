@@ -65,7 +65,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: 4,
     name: "Edilbert Christhuraj",
-    role: "Developper",
+    role: "Developer",
     image:
       "https://res.cloudinary.com/dilan3qfq/image/upload/v1702467105/openroboverse/team/edi_jovhhj.jpg",
     contact: {
@@ -78,7 +78,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: 5,
     name: "Siddarth S. Pillai",
-    role: "Robotics Developper",
+    role: "Robotics Developer",
     image:
       "https://res.cloudinary.com/dilan3qfq/image/upload/v1702467105/openroboverse/team/kikbby0numfyxnzghmfe",
     contact: {
@@ -103,8 +103,8 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: 7,
-    name: "Ahnmed Hadrich",
-    role: "Web Developper",
+    name: "Ahmed Hadrich",
+    role: "Web Developer",
     image:
       "https://res.cloudinary.com/dilan3qfq/image/upload/t_reduced-size/v1745172120/1718785071137_af0nhh.jpg",
     contact: {
