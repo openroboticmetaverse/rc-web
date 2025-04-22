@@ -15,17 +15,14 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: "Robotics Collective",
-  description: "A community of robotics enthusiasts and professionals",
+  description: "Together, we shape the future of robotics",
   keywords: ["robotics", "community", "tech", "projects", "meetups"],
   authors: [{ name: "Robotics Collective Team" }],
   metadataBase: new URL("https://roboticscollective.org"),
-  openGraph: {
-    title: "Robotics Collective",
-    description: "A community of robotics enthusiasts and professionals",
-    url: "https://roboticscollective.org",
-    siteName: "Robotics Collective",
-    locale: "en_US",
-    type: "website",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.png",
   },
   robots: {
     index: true,
