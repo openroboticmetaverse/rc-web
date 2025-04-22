@@ -21,8 +21,7 @@ export const teamMembers: TeamMember[] = [
     id: 1,
     name: "Amine Kharrat",
     role: "Lead",
-    description:
-      "Specializes in robot perception systems with 15+ years of industry experience across major robotics labs.",
+    description: "Initiator and Co-Founder / External Relations",
     image:
       "https://res.cloudinary.com/dilan3qfq/image/upload/t_reduced-size/v1702467097/openroboverse/team/amine_ea0ijk.jpg",
     contact: {
@@ -37,8 +36,7 @@ export const teamMembers: TeamMember[] = [
     id: 2,
     name: "Karim Siala",
     role: "Dev Lead",
-    description:
-      "Former Google AI researcher who leads our machine learning infrastructure and decision-making systems.",
+    description: "Co-Founder / Internal Operations",
     image:
       "https://res.cloudinary.com/dilan3qfq/image/upload/v1702467105/openroboverse/team/karim_kddxb5.jpg",
     contact: {
@@ -120,11 +118,17 @@ export const teamMembers: TeamMember[] = [
 export const communityMembers: TeamMember[] = [
   {
     id: 1001,
-    name: "Mia Zhang",
+    name: "Abhinav Suresh Babu",
     role: "Community Member",
     image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    tags: ["Community"],
+      "https://res.cloudinary.com/dilan3qfq/image/upload/c_fill,w_256,h_256,ar_1:1/v1745350540/Abhinav_iey9qe.jpg",
+  },
+  {
+    id: 1002,
+    name: "Mhd Bashar Alhaffar",
+    role: "Community Member",
+    image:
+      "https://res.cloudinary.com/dilan3qfq/image/upload/v1745350832/Bashar_cfn8af.jpg",
   },
 ];
 
