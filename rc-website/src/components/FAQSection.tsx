@@ -82,11 +82,12 @@ export interface FAQSectionProps {
 const defaultItems: FAQItem[] = [
   {
     id: "what-is-rc",
-    question: "What is Robotics Collective .?",
+    question: "What is Robotics Collective?",
     answer: (
       <>
-        Robotics Collective e.V. is a non‑profit organisation that unites
-        individuals, researchers, and industry partners to accelerate robotics adaption and intelligent robotics system developement.
+        Robotics Collective is a non‑profit organisation that unites
+        individuals, researchers, and industry partners to accelerate robotics
+        adaption and intelligent robotics system developement.
       </>
     ),
   },
@@ -100,7 +101,7 @@ const defaultItems: FAQItem[] = [
     id: "need-experience",
     question: "Do I need technical experience to join?",
     answer:
-      "Not at all. We welcome everyone from curious beginners to experienced roboticists. Beyond the technical side, skills in organization, marketing, and partnership management are essential to keeping things running and growing — so if that’s your strength, we’d love to have you on board.",
+      "Not at all. We welcome everyone from curious beginners to experienced roboticists. Beyond the technical side, skills in organization, marketing, and partnership management are essential to keeping things running and growing — so if that's your strength, we'd love to have you on board.",
   },
   {
     id: "project-types",
@@ -116,9 +117,9 @@ const defaultItems: FAQItem[] = [
   },
   {
     id: "orm-status",
-    question: "What happened to open robotic metaverse?",
+    question: "What happened to open robotic metaverse?",
     answer:
-      "open robotic metaverse has transitioned from an independent association into a dedicated open-source project living on github, continuing to develop the vision of browser‑based simulation.",
+      "open robotic metaverse has transitioned from an independent association into a dedicated open-source project, continuing to develop the vision of browser‑based simulation.",
   },
 ];
 
