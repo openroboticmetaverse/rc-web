@@ -5,11 +5,13 @@ import { MenuIcon, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -39,9 +41,11 @@ export function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-transparent backdrop-blur-md"
-          : "bg-transparent"
+        isMobile 
+          ? "backdrop-blur-md" 
+          : isScrolled
+            ? "backdrop-blur-md"
+            : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,8 +64,8 @@ export function Navbar() {
                 alt="Robotics Collective"
                 width={150}
                 height={30}
-                className={`h-8 w-auto transition-opacity duration-600ms ${
-                  isScrolled
+                className={`h-8 w-auto transition-opacity duration-300ms ${
+                  isScrolled || mobileMenuOpen
                     ? "opacity-0 max-w-[150-px]"
                     : "opacity-100 max-w-[150px]"
                 }`}
