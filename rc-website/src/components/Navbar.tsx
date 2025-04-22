@@ -40,7 +40,7 @@ export function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-background/30 backdrop-blur-xl shadow-lg"
+          ? "bg-transparent backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
@@ -145,7 +145,7 @@ export function Navbar() {
       </div>
 
       {mobileMenuOpen && (
-        <div className="md:hidden bg-card/95 backdrop-blur-md">
+        <div className="md:hidden bg-transparent backdrop-blur-md">
           <div className="container mx-auto px-4 pt-2 pb-4 space-y-4">
             <Link
               href="/"

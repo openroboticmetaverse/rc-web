@@ -20,9 +20,9 @@ export function Footer() {
               <Image 
                 src="/logotext.svg" 
                 alt="Robotics Collective Text Logo" 
-                width={150} 
-                height={48} 
-                className="h-12 w-auto ml-2"
+                width={140} 
+                height={42} 
+                className="hidden md:block h-10 w-auto ml-4"
               />
             </Link>
           </div>

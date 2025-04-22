@@ -82,12 +82,11 @@ export interface FAQSectionProps {
 const defaultItems: FAQItem[] = [
   {
     id: "what-is-rc",
-    question: "What is Robotics Collective e.V.?",
+    question: "What is Robotics Collective .?",
     answer: (
       <>
         Robotics Collective e.V. is a non‑profit organisation that unites
-        individuals, researchers, and industry partners to accelerate
-        intelligent robotics and embodied AI.
+        individuals, researchers, and industry partners to accelerate robotics adaption and intelligent robotics system developement.
       </>
     ),
   },
@@ -101,25 +100,25 @@ const defaultItems: FAQItem[] = [
     id: "need-experience",
     question: "Do I need technical experience to join?",
     answer:
-      "Not at all. We welcome everyone from curious beginners to seasoned roboticists – learning together is core to our mission.",
+      "Not at all. We welcome everyone from curious beginners to experienced roboticists. Beyond the technical side, skills in organization, marketing, and partnership management are essential to keeping things running and growing — so if that’s your strength, we’d love to have you on board.",
   },
   {
     id: "project-types",
     question: "What types of projects do you incubate?",
     answer:
-      "From autonomous mobile robots and ML perception pipelines to open‑source tooling and human‑robot‑interaction studies – if it advances embodied AI, it belongs here!",
+      "We work on all kinds of projects that push embodied AI forward — like mobile robots, machine learning for perception, mechanical design, and human-robot interaction. From building something new or improving existing systems. We also encourage everyone to explore their own ideas, with the support and inspiration of the community.",
   },
   {
     id: "events",
     question: "How often do you host events & workshops?",
     answer:
-      "We run community sessions every month plus ad‑hoc hackathons and deep‑dive workshops. Subscribe to the newsletter for dates.",
+      "We host a community meetup in Aachen every six months, usually at the beginning of each semester. In addition, we meet weekly on Saturdays and sometimes during the week for smaller sessions. We also organize ad-hoc hackathons and deep-dive workshops throughout the year. Become a community member to stay up-to-date and participate in future events.",
   },
   {
     id: "orm-status",
     question: "What happened to open robotic metaverse?",
     answer:
-      "open robotic metaverse has transitioned from an independent association into a dedicated project inside Robotics Collective, continuing to develop the vision of browser‑based simulation.",
+      "open robotic metaverse has transitioned from an independent association into a dedicated open-source project living on github, continuing to develop the vision of browser‑based simulation.",
   },
 ];
 
