@@ -119,8 +119,8 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
-            We are an open ecosystem enabling continious learning innovation and
-            collaboration.
+          We are a community-driven collective, empowering each other 
+          to explore, build, and innovate together through open collaboration.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

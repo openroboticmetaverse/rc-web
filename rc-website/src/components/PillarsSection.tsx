@@ -15,7 +15,7 @@ const pillars = [
     icon: <Users className="h-10 w-10" />,
     title: "Connect",
     description:
-      "A vibrant community where robotics enthusiasts meet and collaborate, fostering partnerships and knowledge exchange.",
+      "A vibrant community where robotics enthusiasts meet and collaborate, enabling partnerships and knowledge exchange.",
     color: "accent",
   },
   {

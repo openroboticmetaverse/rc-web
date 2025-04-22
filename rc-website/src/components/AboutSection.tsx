@@ -43,12 +43,12 @@ export const AboutSection = () => {
             </p>
 
             <p className="text-lg md:text-xl text-gray-300">
-              Robotics Collective e.V. was reborn to close that gap by uniting
+              Robotics Collective . was reborn to close that gap by uniting
               academic groups, industry experts, and passionate individuals in
               an open, collaborative ecosystem.
             </p>
 
-            <div className="grid grid-cols-2 gap-4 mt-8">
+            <div className="grid grid-cols-3 gap-4 mt-8">
               <div className="bg-card p-6 rounded-lg">
                 <div className="text-primary text-3xl font-bold mb-2">7+</div>
                 <div className="text-gray-400">Active Members</div>
@@ -56,6 +56,10 @@ export const AboutSection = () => {
               <div className="bg-card p-6 rounded-lg">
                 <div className="text-primary text-3xl font-bold mb-2">3</div>
                 <div className="text-gray-400">Ongoing Projects</div>
+              </div>
+              <div className="bg-card p-6 rounded-lg">
+                <div className="text-primary text-3xl font-bold mb-2">17+</div>
+                <div className="text-gray-400">Research & Industry Partners</div>
               </div>
             </div>
           </div>

@@ -74,9 +74,8 @@ export const VisionSection = () => {
         <div className="mt-16 bg-card/60 backdrop-blur-sm border border-yellow-secondary/20 rounded-xl p-8 max-w-4xl mx-auto">
           <blockquote className="border-l-4 border-yellow-secondary pl-6 italic text-lg">
             <p>
-              "We envision robots augmenting human capabilities through
-              intelligent, adaptive systems. Our work democratizes access to
-              robotics and creates technology that serves humanity's needs."
+              "Uniting robotics professionals, researchers, enthusiast and end-users 
+              to build intelligent robotic systems with real-world impact."
             </p>
           </blockquote>
         </div>

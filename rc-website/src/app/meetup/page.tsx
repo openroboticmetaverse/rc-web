@@ -68,16 +68,16 @@ export default function MeetupPage() {
       <div className="">
         {/* Hero Section */}
         <section className="relative py-16 md:py-24">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background z-0">
-            <div></div>
+          <div className="absolute inset-0 z-0">
+            <div className="absolute inset-0 bg-gradient-to-b from-background/70 to-background backdrop-blur-[1px] z-10"></div>
             <img
               src="https://res.cloudinary.com/dilan3qfq/image/upload/v1727137785/openroboverse/Meetup/meetup_logo_xt2pev.jpg"
               alt="Robotics Meetup"
-              className="w-full h-full object-cover opacity-30"
+              className="w-full h-full object-cover opacity-80 z-0"
             />
           </div>
 
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-0">
             <div className="max-w-4xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Robotics Community <span className="text-primary">Meetup</span>
