@@ -157,24 +157,19 @@ export default function AboutPage() {
               {/* Join Leadership Team CTA */}
               <div className="flex items-center justify-center">
                 <div className="bg-card/70 p-8 rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-primary/5 h-full flex flex-col justify-center">
-                  <div className="text-center">
-                    <h3 className="text-2xl font-semibold mb-3">
-                      Are you a{" "}
-                      <span className="text-primary">visionary leader</span>?
+                  <div className="flex flex-col items-center text-center">
+                    <div className="bg-primary/10 p-4 rounded-full mb-4">
+                      <UserPlus className="h-10 w-10 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">
+                      Join Our Leadership
                     </h3>
-                    <p className="text-gray-300 mb-6">
-                      We're growing the Robotics Collective leadership team. If
-                      you thrive on shaping strategy, mentoring talent, and
-                      building open‑source robotics, we'd love to meet you.
+                    <p className="text-gray-300 mb-4">
+                      We're growing our team with visionary and passionate
+                      leaders.
                     </p>
                     <Link href="/contact">
-                      <Button
-                        variant="default"
-                        className="px-8 py-6 text-lg rounded-3xl"
-                        size="lg"
-                      >
-                        Join Our Team{" "}
-                      </Button>
+                      <Button variant="default">Get in Touch</Button>
                     </Link>
                   </div>
                 </div>
@@ -270,15 +265,20 @@ export default function AboutPage() {
 
               {/* Join Us */}
               <div className="flex flex-col items-center group transition-all duration-300 hover:translate-y-[-4px]">
-                <div className="w-32 h-32 mb-4 overflow-hidden rounded-full border-2 border-primary group-hover:border-primary transition-colors duration-300 relative bg-card flex items-center justify-center">
-                  <UserPlus className="w-16 h-16 text-primary" />
-                </div>
-                <h3 className="text-xl font-bold mb-1 text-white">Join Us</h3>
-                <p className="text-white text-sm">Become part of our team</p>
-                <div className="mt-3">
-                  <Link href="/contact">
-                    <Button variant="default">Apply Now</Button>
-                  </Link>
+                <div className="bg-card/70 p-8 rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-primary/5 h-full flex flex-col justify-center">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="bg-primary/10 p-4 rounded-full mb-4">
+                      <UserPlus className="h-10 w-10 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">Join Our Team</h3>
+                    <p className="text-gray-300 mb-4">
+                      Become part of our core team and help shape the future of
+                      robotics.
+                    </p>
+                    <Link href="/contact">
+                      <Button variant="default">Apply Now</Button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>

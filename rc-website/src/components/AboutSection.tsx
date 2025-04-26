@@ -59,7 +59,9 @@ export const AboutSection = () => {
               </div>
               <div className="bg-card p-6 rounded-lg">
                 <div className="text-primary text-3xl font-bold mb-2">17+</div>
-                <div className="text-gray-400">Research & Industry Partners</div>
+                <div className="text-gray-400">
+                  Research & Industry Partners
+                </div>
               </div>
             </div>
           </div>

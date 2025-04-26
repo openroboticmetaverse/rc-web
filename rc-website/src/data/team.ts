@@ -57,7 +57,7 @@ export const teamMembers: TeamMember[] = [
       linkedin: "https://linkedin.com/in/janstrehl",
       github: "https://github.com/strehljd",
     },
-    isBoard: true,
+    isBoard: false,
     tags: ["Organization", "Project Management"],
   },
   {
