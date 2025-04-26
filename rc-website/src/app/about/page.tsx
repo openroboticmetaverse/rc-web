@@ -71,7 +71,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                 <div className="bg-card p-6 rounded-lg">
                   <div className="text-yellow-secondary text-3xl font-bold mb-2">
-                    2024
+                    2023
                   </div>
                   <div className="text-gray-200 font-medium">
                     Founded in Aachen
