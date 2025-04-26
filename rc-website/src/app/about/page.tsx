@@ -47,7 +47,7 @@ export default function AboutPage() {
                 Our <span className="text-primary">Mission</span>
               </h2>
               <p className="text-lg text-gray-300 mb-12">
-                Mission. At the Robotics Collective, our mission is to
+                At the Robotics Collective, our mission is to
                 accelerate robotics adoption and the development of intelligent
                 robotic systems that harmoniously interact with humans and their
                 environment. We believe in the power of collaborative innovation
