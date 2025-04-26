@@ -119,14 +119,14 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto">
-          We are a community-driven collective, empowering each other 
-          to explore, build, and innovate together through open collaboration.
+            We are a community-driven collective, empowering each other to
+            explore, build, and innovate through open collaboration.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/projects">
               <Button
-                variant="default" 
+                variant="default"
                 className="px-8 py-6 text-lg rounded-3xl"
                 size="lg"
               >

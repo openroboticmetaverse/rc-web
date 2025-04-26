@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Github, Linkedin, Mail } from "lucide-react";
+import {
+  CircleUserRound,
+  Github,
+  Linkedin,
+  Mail,
+  UserPlus,
+  UserRound,
+} from "lucide-react";
 import {
   teamMembers,
   communityMembers,
@@ -40,12 +47,13 @@ export default function AboutPage() {
                 Our <span className="text-primary">Mission</span>
               </h2>
               <p className="text-lg text-gray-300 mb-12">
-                At the Robotics Collective, our mission is to accelerate the
-                development of intelligent robotic systems that harmoniously
-                interact with humans and their environment. We believe in the
-                power of collaborative innovation and open-source technologies
-                to democratize robotics and create a future where advanced
-                automation enhances human potential rather than replaces it.
+                Mission. At the Robotics Collective, our mission is to
+                accelerate robotics adoption and the development of intelligent
+                robotic systems that harmoniously interact with humans and their
+                environment. We believe in the power of collaborative innovation
+                and open-source technologies to democratize robotics and create
+                a future where advanced automation enhances human potential
+                rather than replaces it.
               </p>
 
               <h2 className="text-2xl md:text-3xl font-semibold mb-6">
@@ -63,7 +71,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
                 <div className="bg-card p-6 rounded-lg">
                   <div className="text-yellow-secondary text-3xl font-bold mb-2">
-                    2024
+                    2023
                   </div>
                   <div className="text-gray-200 font-medium">
                     Founded in Aachen
@@ -71,7 +79,7 @@ export default function AboutPage() {
                 </div>
                 <div className="bg-card p-6 rounded-lg">
                   <div className="text-primary text-3xl font-bold mb-2">
-                    12+
+                    17+
                   </div>
                   <div className="text-gray-200 font-medium">
                     Research Partnerships
@@ -149,24 +157,19 @@ export default function AboutPage() {
               {/* Join Leadership Team CTA */}
               <div className="flex items-center justify-center">
                 <div className="bg-card/70 p-8 rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-primary/5 h-full flex flex-col justify-center">
-                  <div className="text-center">
-                    <h3 className="text-2xl font-semibold mb-3">
-                      Are you a{" "}
-                      <span className="text-primary">visionary leader</span>?
+                  <div className="flex flex-col items-center text-center">
+                    <div className="bg-primary/10 p-4 rounded-full mb-4">
+                      <UserPlus className="h-10 w-10 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">
+                      Join Our Leadership
                     </h3>
-                    <p className="text-gray-300 mb-6">
-                      We're growing the Robotics Collective leadership team. If
-                      you thrive on shaping strategy, mentoring talent, and
-                      building open‑source robotics, we'd love to meet you.
+                    <p className="text-gray-300 mb-4">
+                      We're growing our team with visionary and passionate
+                      leaders.
                     </p>
-                    <Link
-                      href="/contact">
-                      <Button 
-                      variant="default" 
-                      className="px-8 py-6 text-lg rounded-3xl"
-                      size="lg"
-                    >
-                      Join Our Team  </Button>
+                    <Link href="/contact">
+                      <Button variant="default">Get in Touch</Button>
                     </Link>
                   </div>
                 </div>
@@ -259,6 +262,25 @@ export default function AboutPage() {
                   </div>
                 </div>
               ))}
+
+              {/* Join Us */}
+              <div className="flex flex-col items-center group transition-all duration-300 hover:translate-y-[-4px]">
+                <div className="bg-card/70 p-8 rounded-lg border border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg hover:shadow-primary/5 h-full flex flex-col justify-center">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="bg-primary/10 p-4 rounded-full mb-4">
+                      <UserPlus className="h-10 w-10 text-primary" />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">Join Our Team</h3>
+                    <p className="text-gray-300 mb-4">
+                      Become part of our core team and help shape the future of
+                      robotics.
+                    </p>
+                    <Link href="/contact">
+                      <Button variant="default">Apply Now</Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Visual separator between core team and community members */}
@@ -326,20 +348,21 @@ export default function AboutPage() {
                   Become a Partner Organization
                 </h3>
                 <p className="text-gray-300 mb-6">
-                  Interested in collaborating with Robotics Collective? We're
-                  always looking to partner with forward-thinking organizations
-                  in academia, research, and industry to advance robotics
-                  innovation.
+                  Interested in collaborating with Robotics Collective? We just
+                  started onboarding our first partners and are looking for
+                  organizations and individuals with forward-thinking
+                  organizations in academia, research, and industry to advance
+                  robotics innovation.
                 </p>
-                <Link
-                      href="/contact">
-                      <Button 
-                      variant="default" 
-                      className="px-8 py-6 text-lg rounded-3xl"
-                      size="lg"
-                    >
-                      Get in Touch  </Button>
-                    </Link>
+                <Link href="/contact">
+                  <Button
+                    variant="default"
+                    className="px-8 py-6 text-lg rounded-3xl"
+                    size="lg"
+                  >
+                    Get in Touch{" "}
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

@@ -50,7 +50,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: 3,
     name: "Jan Strehl",
-    role: "Secretary",
+    role: "Co-founder and Board member",
     image:
       "https://res.cloudinary.com/dilan3qfq/image/upload/v1702467105/openroboverse/team/jan_v4l9n0.jpg",
     contact: {

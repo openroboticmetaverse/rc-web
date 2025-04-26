@@ -21,7 +21,7 @@ const visionPillars = [
     icon: <Rocket className="h-5 w-5" />,
     title: "Real-world Impact",
     description:
-      "Creating intelligent systems that enhance human capabilities.",
+      "Work closely with end-users and commercial partners to ensure practical applicability and adoption.",
   },
   {
     icon: <Globe className="h-5 w-5" />,
@@ -49,7 +49,8 @@ export const VisionSection = () => {
 
           <p className="text-xl text-muted-foreground leading-relaxed mb-8 max-w-3xl">
             Uniting robotics enthusiasts, researchers, and professionals to
-            build intelligent robotic systems with real-world impact.
+            build and accelerate adoption of intelligent robotic systems with
+            real-world impact.
           </p>
         </div>
 
@@ -70,12 +71,13 @@ export const VisionSection = () => {
           ))}
         </div>
 
-        {/* Vision statement callout */}
+        {/* Vision statement quote */}
         <div className="mt-16 bg-card/60 backdrop-blur-sm border border-yellow-secondary/20 rounded-xl p-8 max-w-4xl mx-auto">
           <blockquote className="border-l-4 border-yellow-secondary pl-6 italic text-lg">
             <p>
-              "Uniting robotics professionals, researchers, enthusiast and end-users 
-              to build intelligent robotic systems with real-world impact."
+              “Robots relieve humanity of mundane tasks and chores, making life
+              safer and full of new opportunities. We make sure everyone
+              benefits from this technology.”
             </p>
           </blockquote>
         </div>
