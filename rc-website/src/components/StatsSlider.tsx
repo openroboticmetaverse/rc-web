@@ -42,26 +42,26 @@ const StatCard: React.FC<StatCardProps> = ({
 export default function StatsSlider() {
   const stats = [
     {
-      percentage: "5x Growth",
+      percentage: "100+",
       description:
-        "The industrial robotics market is projected to grow by over 430%, jumping from $55.1B in 2025 to $291.1B by 2035 as automation reshapes manufacturing.",
-      source: "Global Industry Analysts, 2025",
+        "Technical institutes in Aachen, whether established leaders or emerging players, are steadily advancing into advanced robotics and automation projects.",
+      source: "",
       backgroundColor: "bg-primary",
       textColor: "text-white",
     },
     {
-      percentage: "4x Larger",
+      percentage: "68%",
       description:
-        "Robotics as a whole is on track to grow by more than 340%, jumping from $47.8B in 2024 to $211.1B by 2034, driven by demand in e-commerce, logistics, and smart factories.",
-      source: "NextMove Strategy Consulting, 2025",
+        "European industrial companies see automation as key to competitiveness, sustainability, precision, and tackling labor shortages.",
+      source: "Survey by Reichelt Elektronik, 2024",
       backgroundColor: "bg-yellow-secondary",
       textColor: "text-black",
     },
     {
-      percentage: "18%/Year",
+      percentage: "18%",
       description:
-        "Humanoid robots are growing fast, with the market expanding by 18% every year. Driven by breakthroughs in mobility, AI, and healthcare applications.",
-      source: "GlobeNewswire, 2025",
+        "Projected CAGR* for the global humanoid robot market from 2025 to 2030, driven by advances in AI, robotics, and computing technology.",
+      source: "*Compound Annual Growth Rate | GlobeNewswire, 2025",
       backgroundColor: "bg-[#C03221]",
       textColor: "text-white",
     },
