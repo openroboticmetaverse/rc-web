@@ -50,7 +50,7 @@ export const AboutSection = () => {
 
             <div className="grid grid-cols-3 gap-4 mt-8">
               <div className="bg-card p-6 rounded-lg">
-                <div className="text-primary text-3xl font-bold mb-2">7+</div>
+                <div className="text-red-accent text-3xl font-bold mb-2">7+</div>
                 <div className="text-gray-400">Active Members</div>
               </div>
               <div className="bg-card p-6 rounded-lg">
@@ -58,7 +58,7 @@ export const AboutSection = () => {
                 <div className="text-gray-400">Ongoing Projects</div>
               </div>
               <div className="bg-card p-6 rounded-lg">
-                <div className="text-primary text-3xl font-bold mb-2">17+</div>
+                <div className="text-yellow-secondary text-3xl font-bold mb-2">17+</div>
                 <div className="text-gray-400">
                   Research & Industry Partners
                 </div>
