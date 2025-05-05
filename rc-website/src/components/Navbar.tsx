@@ -115,6 +115,16 @@ export function Navbar() {
               Events
             </Link>
             <Link
+              href="/blog"
+              className={`transition-colors ${
+                isActivePath("/blog")
+                  ? "text-white font-medium glow"
+                  : "text-gray-300 hover:text-white"
+              }`}
+            >
+              Blog
+            </Link>
+            <Link
               href="/contact"
               className={`transition-colors ${
                 isActivePath("/contact")
@@ -194,6 +204,17 @@ export function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Events
+            </Link>
+            <Link
+              href="/blog"
+              className={`block py-2 transition-colors ${
+                isActivePath("/blog")
+                  ? "text-white font-medium glow"
+                  : "text-gray-300 hover:text-white"
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Blog
             </Link>
             <Link
               href="/contact"
