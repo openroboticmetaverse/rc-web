@@ -38,6 +38,29 @@ export function Navbar() {
     return false;
   };
 
+  const navItems = [
+    {
+      name: "About",
+      href: "/about",
+    },
+    {
+      name: "Projects",
+      href: "/projects",
+    },
+    {
+      name: "Events",
+      href: "/events",
+    },
+    {
+      name: "Blog",
+      href: "/blog",
+    },
+    {
+      name: "Contact",
+      href: "/contact",
+    },
+  ];
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -84,46 +107,19 @@ export function Navbar() {
             >
               Home
             </Link>
-            <Link
-              href="/about"
-              className={`transition-colors ${
-                isActivePath("/about")
-                  ? "text-white font-medium glow"
-                  : "text-gray-300 hover:text-white"
-              }`}
-            >
-              About
-            </Link>
-            <Link
-              href="/projects"
-              className={`transition-colors ${
-                isActivePath("/projects")
-                  ? "text-white font-medium glow"
-                  : "text-gray-300 hover:text-white"
-              }`}
-            >
-              Projects
-            </Link>
-            <Link
-              href="/events"
-              className={`transition-colors ${
-                isActivePath("/events")
-                  ? "text-white font-medium glow"
-                  : "text-gray-300 hover:text-white"
-              }`}
-            >
-              Events
-            </Link>
-            <Link
-              href="/contact"
-              className={`transition-colors ${
-                isActivePath("/contact")
-                  ? "text-white font-medium glow"
-                  : "text-gray-300 hover:text-white"
-              }`}
-            >
-              Contact
-            </Link>
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`transition-colors ${
+                  isActivePath(item.href)
+                    ? "text-white font-medium glow"
+                    : "text-gray-300 hover:text-white"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
           </div>
 
           <div className="hidden md:block">
@@ -162,50 +158,20 @@ export function Navbar() {
             >
               Home
             </Link>
-            <Link
-              href="/about"
-              className={`block py-2 transition-colors ${
-                isActivePath("/about")
-                  ? "text-white font-medium glow"
-                  : "text-gray-300 hover:text-white"
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              href="/projects"
-              className={`block py-2 transition-colors ${
-                isActivePath("/projects")
-                  ? "text-white font-medium glow"
-                  : "text-gray-300 hover:text-white"
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Projects
-            </Link>
-            <Link
-              href="/events"
-              className={`block py-2 transition-colors ${
-                isActivePath("/events")
-                  ? "text-white font-medium glow"
-                  : "text-gray-300 hover:text-white"
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Events
-            </Link>
-            <Link
-              href="/contact"
-              className={`block py-2 transition-colors ${
-                isActivePath("/contact")
-                  ? "text-white font-medium glow"
-                  : "text-gray-300 hover:text-white"
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact
-            </Link>
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`block py-2 transition-colors ${
+                  isActivePath(item.href)
+                    ? "text-white font-medium glow"
+                    : "text-gray-300 hover:text-white"
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
             <Button
               variant="default"
               onClick={() => setMobileMenuOpen(false)}

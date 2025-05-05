@@ -54,10 +54,18 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/meetup"
+                  href="/events"
                   className="text-4xl hover:text-white transition-colors"
                 >
-                  Meetup
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/blog"
+                  className="text-4xl hover:text-white transition-colors"
+                >
+                  Blog
                 </Link>
               </li>
             </ul>
