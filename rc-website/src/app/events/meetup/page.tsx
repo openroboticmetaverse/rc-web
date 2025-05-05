@@ -6,7 +6,7 @@ import Link from "next/link";
 import { getEventBySlug } from "@/data/events";
 
 export const metadata: Metadata = {
-  title: "Meetup | Robotics Collective",
+  title: "Robotics Community Meetup | Robotics Collective",
   description: "Join our robotics meetups and events in your area",
   keywords: [
     "robotics meetups",
@@ -123,13 +123,13 @@ export default function MeetupPage() {
               </div>
               
               <div className="mt-8">
-                <Link href="/projects">
+                <Link href="/events">
                   <Button
                     variant="outline"
                     className="px-8 py-6 text-lg rounded-3xl"
                     size="lg"
                   >
-                    Check Out Our Projects
+                    Browse Upcoming Events
                   </Button>
                 </Link>
               </div>
@@ -178,26 +178,16 @@ export default function MeetupPage() {
 
               <div className="mt-12 bg-card/50 p-8 rounded-lg">
                 <h3 className="text-2xl font-semibold mb-6 text-center">
-                  Upcoming <span className="text-primary">Events</span>
+                  Interested in <span className="text-primary">Future Events</span>?
                 </h3>
                 <p className="text-lg text-gray-300 mb-6">
-                  Don't miss our upcoming Info Session and Hackaton! These events are a great opportunity 
-                  to connect with experts, gain insights into the latest advancements, and grow your 
-                  professional network.
+                  Check out our upcoming Info Session and Hackaton events. Don't miss these opportunities to connect 
+                  with experts, gain insights into the latest advancements, and grow your professional network.
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-                  <div className="bg-card p-6 rounded-lg">
-                    <h4 className="font-bold text-xl mb-2">Info Session</h4>
-                    <p className="text-gray-300 mb-2">June 15, 2025</p>
-                    <p className="text-gray-400 mb-4">Learn about our projects and how to get involved</p>
-                    <Button variant="outline" size="sm">Coming Soon</Button>
-                  </div>
-                  <div className="bg-card p-6 rounded-lg">
-                    <h4 className="font-bold text-xl mb-2">Robotics Hackaton</h4>
-                    <p className="text-gray-300 mb-2">August 10-12, 2025</p>
-                    <p className="text-gray-400 mb-4">Build innovative solutions in a collaborative environment</p>
-                    <Button variant="outline" size="sm">Coming Soon</Button>
-                  </div>
+                <div className="flex justify-center">
+                  <Link href="/events">
+                    <Button variant="default">View Upcoming Events</Button>
+                  </Link>
                 </div>
               </div>
             </div>
