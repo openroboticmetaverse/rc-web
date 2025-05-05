@@ -105,14 +105,14 @@ export function Navbar() {
               Projects
             </Link>
             <Link
-              href="/meetup"
+              href="/events"
               className={`transition-colors ${
-                isActivePath("/meetup")
+                isActivePath("/events")
                   ? "text-white font-medium glow"
                   : "text-gray-300 hover:text-white"
               }`}
             >
-              Meetup
+              Events
             </Link>
             <Link
               href="/contact"
@@ -185,15 +185,15 @@ export function Navbar() {
               Projects
             </Link>
             <Link
-              href="/meetup"
+              href="/events"
               className={`block py-2 transition-colors ${
-                isActivePath("/meetup")
+                isActivePath("/events")
                   ? "text-white font-medium glow"
                   : "text-gray-300 hover:text-white"
               }`}
               onClick={() => setMobileMenuOpen(false)}
             >
-              Meetup
+              Events
             </Link>
             <Link
               href="/contact"
