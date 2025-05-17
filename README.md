@@ -1,5 +1,7 @@
 # Robotics Collective Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e307b1b0-0632-4eea-9f87-295defcc6ffd/deploy-status)](https://app.netlify.com/projects/roboticscollective/deploys)
+
 The new Robotics Collective website repository.
 
 ## Prerequisites
